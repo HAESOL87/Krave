@@ -6,10 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+var Kraving = require('./models/kraving');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-mongoose.connect('mongodb://localhost/krave');
+mongoose.connect('mongodb://localhost/kraving');
 
 var app = express();
 

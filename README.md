@@ -1,3 +1,3 @@
 # Krave
 
-Plan: ![Alt Image Text](./plan.jpg "Screenshot")
+Plan: ![Alt Image Text](./plan2.jpg "Screenshot")
