@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div>
+      <h3>KRAVINGs:</h3>
+      <% kravings.forEach(function(kraving) { %>
+        <h4>
+          <form method="POST" action="/kravings/<%= kraving._id %>?_method=DELETE">
+            <a href="/kravings/<%= kraving._id %>">
+              <%= kraving.name %>
+            </a>
+            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+          </form>
+        </h4>
+      <% }) %>
+    </div>
+    <a href="/kravings/new" class="btn btn-primary">New</a>
+    <a href="/kravings/fav" class="btn btn-primary">Favorite</a>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
