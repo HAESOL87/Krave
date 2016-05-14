@@ -8,9 +8,11 @@ var mongoose = require('mongoose');
 var methodOverride = require('method-override');
 
 var Kraving = require('./models/kraving');
+var Favorite = require('./models/fav');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var kravingsRouter = require('./routes/kravings');
 
 mongoose.connect('mongodb://localhost/kraving');
 
@@ -31,6 +33,7 @@ app.use(methodOverride('_method'));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/kravings', kravingsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
