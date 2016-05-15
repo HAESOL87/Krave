@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 var Kraving = require('./kraving');
+var Favorite = require('./fav');
 
 var User = new mongoose.Schema({
   local : {
@@ -9,7 +10,8 @@ var User = new mongoose.Schema({
     email    : String,
     password : String
   },
-  kravings : [Kraving.schema]
+  kravings : [Kraving.schema],
+  favorites : [Favorite.schema]
 });
 
 User.methods.encrypt = function(password) {

@@ -54,19 +54,6 @@ router.get('/:id/info', function(req, res, next) {
   });
 });
 
-
-// Show Favorite
-router.get('/fav', function(req, res, next) {
-  Favorite.find({})
-  .then(function(favorite) {
-    if (!favorite) return next(makeError(res, 'Document not found', 404));
-    res.render('kravings/showFav', { favorite: favorite});
-  }, function(err) {
-    return next(err);
-  });
-});
-
-
 // Create Kraving
 router.post('/', function(req, res, next) {
   var kraving = new Kraving({
