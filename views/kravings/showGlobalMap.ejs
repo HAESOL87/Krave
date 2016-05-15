@@ -2,6 +2,78 @@
 <html lang="en">
 <head>
   <% include ../partials/head %>
+  <title>Place searches</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+
+  <script type="text/javascript">
+
+
+      var map;
+      var infowindow;
+
+      geocoder = new google.maps.Geocoder();
+
+      window.getCoordinates = function(address, callback) {
+        var coordinates;
+        geocoder.geocode({ address: address }, function(results, status) {
+          coords_lat = results[0].geometry.location.lat();
+          coords_lng = results[0].geometry.location.lng();
+          coordinates = [coords_lat, coords_lng];
+          callback(coordinates);
+        });
+      }
+
+      function initMap() {
+        var pyrmont = {lat: 33.7490, lng: -84.3880};
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 500,
+          type: ['restaurant']
+        }, callback);
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name, place.opening_hours);
+          infowindow.open(map, this);
+        });
+      }
+
+  </script>
 </head>
 
 <body class="container-fluid">
@@ -9,10 +81,17 @@
     <% include ../partials/header %>
   </header>
 
+    <p><b>Name: </b><%= kraving.name %></p>
+    <p><b>City: </b><%= kraving.city %></p>
+    <p><b>State: </b><%= kraving.state %></p>
+    <p><b>Zip Code: </b><%= kraving.zip %></p>
+
+
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer></script>
+
   <main>
-    <div>
-      <h3>SHOW GLOBAL MAP</h3>
-    </div>
+
 
     <a href="/kravings/" class="btn btn-primary">Back</a>
     <a href="/kravings/<%= kraving._id %>/info" class="btn btn-primary">Info</a>
