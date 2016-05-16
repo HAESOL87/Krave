@@ -2,6 +2,18 @@
 <html lang="en">
 <head>
   <% include ../partials/head %>
+    <style>
+   #map {
+      width: 500px;
+      height: 400px;
+      background-color: #CCC;
+      float: right;
+    }
+    </style>
+
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+
 </head>
 
 <body class="container-fluid">
@@ -10,12 +22,30 @@
   </header>
 
   <main>
+
     <div>
-      <h3>SHOW INFO</h3>
+      <h3>SHOW KRAVING: <%= kraving.name %> </h3>
     </div>
 
-    <a href="/kravings/<%= kraving._id %>" class="btn btn-primary">Back</a>
-    <a href="/kravings/" class="btn btn-primary">HOME</a>
+    <div id="map"></div>
+
+     <div>
+      <h4 id ="name">Name:</h4>
+      <h4 id ="address">Address:</h4>
+      <h4 id ="phone">Phone:</h4>
+      <h4 id ="hours">Hours:</h4>
+      <h4 id ="website">Website:</h4>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer></script>
+
+    <form class="Fav" action="/favs" method="post">
+      <a href="/kravings/<%= kraving._id %>" class="btn btn-primary">Back</a>
+      <a href="/kravings/" class="btn btn-primary">HOME</a>
+      <button id="hello" type="submit" class="btn btn-success">Save</button>
+    </form>
+
+    <button id="hello2" class="btn btn-success">Test</button>
 
  </main>
 

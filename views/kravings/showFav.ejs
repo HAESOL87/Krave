@@ -11,7 +11,17 @@
 
   <main>
     <div>
-      <h3>SHOW FAV</h3>
+      <h3>Show FAV</h3>
+      <% favorites.forEach(function(favorite) { %>
+        <h4>
+          <form method="POST" action="/favs/<%= favorite._id %>?_method=DELETE">
+            <a href="/favs/<%= favorite._id %>">
+              <%= favorite.name %>
+            </a>
+            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+          </form>
+        </h4>
+      <% }) %>
     </div>
 
     <a href="/kravings" class="btn btn-primary">Back</a>
