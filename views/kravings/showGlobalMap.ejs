@@ -18,98 +18,13 @@
     </style>
   <script type="text/javascript" src="/js/jquery.js"></script>
 
-  <script type="text/javascript">
-
-      var map;
-      var infowindow;
-      var test1 = $('#h').text();
-      console.log(test1);
-
-      var kraveCity = $('#city').text();
-      var kraveState = $('#state').text();
-      var kraveZip = $('#zip').text();
-      var address = kraveCity + ", " + kraveState + " " + kraveZip;
-
-      console.log(kraveCity);
-      console.log(address);
-      // window.getCoordinates = function(address, callback) {
-      //   var coordinates;
-
-      //   geocoder.geocode({ address: address }, function(results, status) {
-      //     coords_lat = results[0].geometry.location.lat();
-      //     coords_lng = results[0].geometry.location.lng();
-      //     coordinates = [coords_lat, coords_lng];
-      //     callback(coordinates);
-      //   });
-      // }
-
-      function initMap() {
-        var pyrmont = {lat: 33.7490, lng: -84.3880};
-
-        //geocoder = new google.maps.Geocoder();
-
-
-        getCoordinates(address, function(coords) {
-
-        })
-
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: pyrmont,
-          zoom: 15
-        });
-
-        infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-        service.nearbySearch({
-          location: pyrmont,
-          radius: 500,
-          type: ['restaurant']
-        }, callback);
-      }
-
-      function callback(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-          }
-        }
-      }
-
-      function createMarker(place) {
-        var placeLoc = place.geometry.location;
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location
-        });
-
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name, place.opening_hours);
-          infowindow.open(map, this);
-        });
-      }
-
-      function getCoordinates(address, cb) {
-        var coordinates;
-        geocoder = new google.maps.Geocoder();
-
-        geocoder.geocode({ address: address }, function(results, status) {
-          coords_lat = results[0].geometry.location.lat();
-          coords_lng = results[0].geometry.location.lng();
-          coordinates = [coords_lat, coords_lng];
-          cb(coordinates);
-        });
-        //return coordinates;
-      }
-
-  </script>
+  <script type="text/javascript" src="/js/javascript.js"></script>
 </head>
 
 <body class="container-fluid">
   <header>
     <% include ../partials/header %>
   </header>
-
-    <h1 id="h"> Test </h1>
 
     <p><b>Name: </b><span id="name"><%= kraving.name %></span></p>
     <p><b>City: </b><span id="city"><%= kraving.city %></span></p>
