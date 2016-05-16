@@ -36,7 +36,7 @@ router.get('/info2', function(req, res, next) {
 // Create Fav
 router.post('/', function(req, res, next) {
   var favorite = new Favorite({
-    name: "Kroger"
+    name: "kroger"
     // _id:
   });
   favorite.save()
@@ -47,7 +47,7 @@ router.post('/', function(req, res, next) {
   });
 });
 
-// Show Global Map
+// Show Favorite List
 router.get('/:id', function(req, res, next) {
   Favorite.findById(req.params.id)
   .then(function(favorite) {
