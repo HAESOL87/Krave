@@ -102,7 +102,7 @@ router.put('/:id', function(req, res, next) {
 
 // Destroy Kraving
 router.delete('/:id', function(req, res, next) {
-  Kraving.FindByIdAndRemove(req.params.id)
+  Kraving.findByIdAndRemove(req.params.id)
   .then(function() {
     res.redirect('/kravings');
   }, function(err) {
