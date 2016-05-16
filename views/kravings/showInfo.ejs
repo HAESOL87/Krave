@@ -91,9 +91,11 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer></script>
 
-    <a href="/kravings/<%= kraving._id %>" class="btn btn-primary">Back</a>
-    <a href="/kravings/" class="btn btn-primary">HOME</a>
-    <a href="/kravings/" class="btn btn-primary">FAV</a>
+    <form class="Fav" action="/favs" method="post">
+      <a href="/kravings/<%= kraving._id %>" class="btn btn-primary">Back</a>
+      <a href="/kravings/" class="btn btn-primary">HOME</a>
+      <button type="submit" class="btn btn-success">Save</button>
+    </form>
 
  </main>
 
