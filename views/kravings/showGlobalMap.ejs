@@ -16,11 +16,15 @@
         height: 400px;
       }
     </style>
-  <script type="text/javascript" src="/js/jquery-2.2.2.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.js"></script>
+
   <script type="text/javascript">
 
       var map;
       var infowindow;
+      var test1 = $('#h').text();
+      console.log(test1);
+
       var kraveCity = $('#city').text();
       var kraveState = $('#state').text();
       var kraveZip = $('#zip').text();
@@ -104,6 +108,8 @@
   <header>
     <% include ../partials/header %>
   </header>
+
+    <h1 id="h"> Test </h1>
 
     <p><b>Name: </b><span id="name"><%= kraving.name %></span></p>
     <p><b>City: </b><span id="city"><%= kraving.city %></span></p>
