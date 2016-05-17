@@ -46,6 +46,7 @@ router.get('/:id', function(req, res, next) {
 
 // Show Info
 router.get('/:id/info', function(req, res, next) {
+  console.log("I'm here!")
   Kraving.findById(req.params.id)
   .then(function(kraving) {
     if (!kraving) return next(makeError(res, 'Document not found', 404));
@@ -60,11 +61,11 @@ router.put('/:id/info', function(req, res, next) {
   Kraving.findById(req.params.id)
   .then(function(kraving) {
     if (!kraving) return(makeError(res, 'Document not found', 404));
-    kraving.placeid = req.body.placeid;
+    kraving.placeid = req.body.place;
     return kraving.save();
   })
   .then(function(saved) {
-    res.redirect('/kravings/showInfo', { kraving: kraving});
+    res.redirect('/kravings/' + saved._id + '/info');
   }, function(err) {
     return next(err);
   });

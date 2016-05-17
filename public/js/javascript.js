@@ -63,7 +63,7 @@ $(document).ready(function() {
             createMarker(results[i]);
           }
           getPlace(results);
-          getParams();
+
         }
         else {
           console.log('status:', status);
@@ -89,9 +89,42 @@ $(document).ready(function() {
         console.log(results[0].name);
         console.log(kraveId);
         for (var i = 0; i < results.length; i++) {
-          $('#places').append("<br /><a href='/kravings/" + kraveId + "/info' type='submit'>" +  results[i].name + "</a><br /><input type='hidden' name='placeid' value='" + results[i].place_id + "' id='placeidField'>");
+
+                    $('#places').append("<br /><a href='/kravings/" + kraveId + "/info' type='submit'>" +  results[i].name + "</a><br /><input type='text' id='placeid" + i + "' value='" + results[i].place_id + "' id='placeidField'><br /><button id='hello'" + i + " type='submit' class='btn btn-success'>Info</button>");
         }
       }
 
+      $("button").click(function() {
+       var test = $(this).attr('id');
+       var test2 = test.slice(5); // I get the i
+       console.log(test);
+       console.log(test2);
+
+       var test3 = 'placeid' + test2;
+
+       console.log(test3);
+
+       var test4 = $("#"+test3+"").val();  // with the i get value of placeidi
+
+       console.log(test4);
+
+       var test5 = $('#place').val();
+
+       console.log("Test" + test5);
+
+       $('#place').append("<br/><input type='text' id='place' value='" + test5 + "'>");
+
+
+      });
+
+
+
 
 });
+
+// <a href='/kravings/" + kraveId + "/info' type='submit'>" +  results[i].name + "</a><br />
+
+// <input type='text' name='placeid0 "' value='" + results[i].place_id + "' id='placeidField'>
+
+// <button id='hello'" + i + " type='submit' class='btn btn-success'>Info</button>
+
