@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+
   </head>
   <body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+      </a>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <div class="dropdown">
+  <button class="dropbtn">Menu</button>
+  <div class="dropdown-content">
+    <a href="/">Home</a>
+    <a href="/kravings">KRAVs</a>
+    <a href="/favs">FAVs</a>
+  </div>
+</div>
+    </ul>
+  </div>
+
+</nav>
+    <div class="jumbotron">
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+     <h2>What are you Kraving?</h2>
+     </div>
   </body>
 </html>
