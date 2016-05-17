@@ -22,23 +22,12 @@ router.get('/', function(req, res, next) {
   });
 });
 
-
-// Show Favorite List in detail
-router.get('/info2', function(req, res, next) {
-  Favorite.find({})
-  .then(function(favorites) {
-    res.render('kravings/showInfo2', { favorites: favorites } );
-  }, function(err) {
-    return next(err);
-  });
-});
-
 // Create Fav
 router.post('/', function(req, res, next) {
-  console.log(req.body);
   var favorite = new Favorite({
-    name: req.body.placeName
-    // _id:
+    name: req.body.placeName,
+    placeID: req.body.placeID,
+    kravingName: req.body.kravingName
   });
   favorite.save()
   .then(function(saved) {
@@ -53,7 +42,7 @@ router.get('/:id', function(req, res, next) {
   Favorite.findById(req.params.id)
   .then(function(favorite) {
     if (!favorite) return next(makeError(res, 'Document not found', 404));
-    res.render('kravings/showInfo2', { favorite: favorite});
+    res.render('kravings/showInfo2', { favorite: favorite });
   }, function(err) {
     return next(err);
   });
@@ -68,17 +57,6 @@ router.delete('/:id', function(req, res, next) {
     return next(err);
   });
 });
-
-// // Show Favorite List in detail
-// router.get('/info2', function(req, res, next) {
-//   Favorite.find({})
-//   .then(function(favorites) {
-//     res.render('kravings/showInfo2', { favorites: favorites } );
-//   }, function(err) {
-//     return next(err);
-//   });
-
-// });
 
 
 module.exports = router;

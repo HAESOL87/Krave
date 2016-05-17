@@ -63,6 +63,7 @@ $(document).ready(function() {
             createMarker(results[i]);
           }
           getPlace(results);
+          getParams();
         }
         else {
           console.log('status:', status);
@@ -91,5 +92,6 @@ $(document).ready(function() {
           $('#places').append("<br /><a href='/kravings/" + kraveId + "/info' type='submit'>" +  results[i].name + "</a><br /><input type='hidden' name='placeid' value='" + results[i].place_id + "' id='placeidField'>");
         }
       }
+
 
 });

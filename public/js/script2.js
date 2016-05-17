@@ -6,10 +6,8 @@ $(document).ready(function() {
         var service = new google.maps.places.PlacesService(map);
 
         service.getDetails({
-          placeId: 'ChIJfTK9iWcE9YgRbZH2RIa6Ajc'
+          placeId: favPlaceId
         }, function(place, status) {
-          newPlace = place;
-          console.log(place);
           if (status === google.maps.places.PlacesServiceStatus.OK) {
 
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -36,6 +34,7 @@ $(document).ready(function() {
               infowindow.open(map, this);
             });
           }
+
         });
       }
 
@@ -46,9 +45,6 @@ $(document).ready(function() {
       $('#phone').text('Phone: ' + phone);
       $('#hours').text('Hours: ' + hours);
       $('#website').text('Website: ' + website);
-
-      $('#placeNameField').val(name);
-      $('#placeIDField').val(placeID);
     };
 
 });
