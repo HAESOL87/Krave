@@ -61,6 +61,7 @@ $(document).ready(function() {
             //getPlace(results[i]);
           }
           getPlace(results);
+          getParams();
         }
         else {
           console.log('status:', status);
@@ -84,11 +85,11 @@ $(document).ready(function() {
 
       function getPlace(results) {
         console.log(results[0].name);
+        // console.log(params.id);
         for (var i = 0; i < results.length; i++) {
-        $('#place').append("<br /><a href='/kravings/<%= kraving._id %>/info'>" +  results[i].name + "</a><br />");
+        $('#place').append("<br/><a href='/kravings/<%= kravings.id %>/info'>" +  results[i].name + "</a><br/>");
+      }
       }
 
-
-      }
 
 });

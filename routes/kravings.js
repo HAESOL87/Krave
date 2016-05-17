@@ -57,10 +57,10 @@ router.get('/:id/info', function(req, res, next) {
 // Create Kraving
 router.post('/', function(req, res, next) {
   var kraving = new Kraving({
-    name: req.body.name,
-    city: req.body.city,
-    state: req.body.state,
-    zip: req.body.zip
+    // name: req.body.name12,
+    // city: req.body.city12,
+    // // state: req.body.state12,
+    // zip: req.body.zip12
   });
   kraving.save()
   .then(function(saved) {

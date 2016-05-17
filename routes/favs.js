@@ -36,8 +36,8 @@ router.get('/info2', function(req, res, next) {
 // Create Fav
 router.post('/', function(req, res, next) {
   var favorite = new Favorite({
-    name: "kroger"
-    // _id:
+    name : "kroger"
+    // _id  :
   });
   favorite.save()
   .then(function(saved) {

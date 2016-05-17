@@ -11,6 +11,8 @@ $(document).ready(function() {
       console.log("clicked!");
       // var pID = place.place_id;
       console.log(placeID1);
+      var kravingName = $("#showK").text();
+      console.log(kravingName);
 
     });
 
