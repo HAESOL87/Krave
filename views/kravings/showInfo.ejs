@@ -42,6 +42,13 @@
     <form class="Fav" action="/favs" method="post">
       <a href="/kravings/<%= kraving._id %>" class="btn btn-primary">Back</a>
       <a href="/kravings/" class="btn btn-primary">HOME</a>
+
+
+      <input type="hidden" name="placeName" id="nameField">
+      <input type="hidden" name="placeAddress" id="addressField">
+      <input type="hidden" name="placePhone" id="phoneField">
+      <input type="hidden" name="placeHours" id="hoursField">
+
       <button id="hello" type="submit" class="btn btn-success">Save</button>
     </form>
 
@@ -52,5 +59,7 @@
   <footer>
     <% include ../partials/footer %>
   </footer>
+
+
 </body>
 </html>
