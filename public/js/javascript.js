@@ -3,6 +3,7 @@ $(document).ready(function() {
       var map;
       var infowindow;
 
+      var kraveId = window.location.pathname.slice(10);
       var kraveName = $('#name').text();
       var kraveCity = $('#city').text();
       var kraveState = $('#state').text();
@@ -85,9 +86,9 @@ $(document).ready(function() {
 
       function getPlace(results) {
         console.log(results[0].name);
-        // console.log(params.id);
+        console.log(kraveId);
         for (var i = 0; i < results.length; i++) {
-        $('#place').append("<br/><a href='/kravings/<%= kravings.id %>/info'>" +  results[i].name + "</a><br/>");
+        $('#place').append("<br /><a href='/kravings/" + kraveId + "/info'>" +  results[i].name + "</a><br />");
       }
       }
 

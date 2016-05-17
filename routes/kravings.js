@@ -44,6 +44,7 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
+// Show Info
 router.get('/:id/info', function(req, res, next) {
   Kraving.findById(req.params.id)
   .then(function(kraving) {
