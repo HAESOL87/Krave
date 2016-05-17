@@ -9,6 +9,8 @@ $(document).ready(function() {
       var kraveState = $('#state').text();
       var kraveZip = $('#zip').text();
       var address = kraveCity + ", " + kraveState + " " + kraveZip;
+            $('#nameField').val(name);
+
 
       console.log(address);
 
@@ -86,7 +88,7 @@ $(document).ready(function() {
         console.log(results[0].name);
         console.log(kraveId);
         for (var i = 0; i < results.length; i++) {
-          $('#place').append("<br /><a href='/kravings/" + kraveId + "/info'>" +  results[i].name + "</a><br />");
+          $('#places').append("<br /><a href='/kravings/" + kraveId + "/info' type='submit'>" +  results[i].name + "</a><br /><input type='hidden' name='placeid' value='" + results[i].place_id + "' id='placeidField'>");
         }
       }
 

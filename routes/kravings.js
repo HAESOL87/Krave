@@ -55,6 +55,21 @@ router.get('/:id/info', function(req, res, next) {
   });
 });
 
+// Update Info
+router.put('/:id/info', function(req, res, next) {
+  Kraving.findById(req.params.id)
+  .then(function(kraving) {
+    if (!kraving) return(makeError(res, 'Document not found', 404));
+    kraving.placeid = req.body.placeid;
+    return kraving.save();
+  })
+  .then(function(saved) {
+    res.redirect('/kravings/showInfo', { kraving: kraving});
+  }, function(err) {
+    return next(err);
+  });
+});
+
 // Create Kraving
 router.post('/', function(req, res, next) {
   var kraving = new Kraving({
@@ -83,23 +98,23 @@ router.get('/:id/edit', function(req, res, next) {
 });
 
 
-// Update Kraving
-router.put('/:id', function(req, res, next) {
-  Kraving.findById(req.params.id)
-  .then(function(kravings) {
-    if (!kraving) return(makeError(res, 'Document not found', 404));
-    kraving.name = req.body.name;
-    kraving.city = req.body.city;
-    kraving.state = req.body.state;
-    kraving.zip = req.body.zip;
-    return kraving.save();
-  })
-  .then(function(saved) {
-    res.redirect('/kravings');
-  }, function(err) {
-    return next(err);
-  });
-});
+// // Update Kraving
+// router.put('/:id', function(req, res, next) {
+//   Kraving.findById(req.params.id)
+//   .then(function(kravings) {
+//     if (!kraving) return(makeError(res, 'Document not found', 404));
+//     kraving.name = req.body.name;
+//     kraving.city = req.body.city;
+//     kraving.state = req.body.state;
+//     kraving.zip = req.body.zip;
+//     return kraving.save();
+//   })
+//   .then(function(saved) {
+//     res.redirect('/kravings');
+//   }, function(err) {
+//     return next(err);
+//   });
+// });
 
 // Destroy Kraving
 router.delete('/:id', function(req, res, next) {
