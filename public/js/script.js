@@ -1,7 +1,16 @@
 $(document).ready(function() {
 
+      var placeID1;
+      var name1;
+      var address1;
+      var phone1;
+      var hours1;
+      var website1;
+
     $("#hello2").click(function() {
       console.log("clicked!");
+      // var pID = place.place_id;
+      console.log(placeID1);
 
     });
 
@@ -34,7 +43,9 @@ $(document).ready(function() {
 
             var open_to_close = place.opening_hours.periods[n].open.time + ' - ' + place.opening_hours.periods[n].close.time;
 
-            setPlaceInfo(place.name, place.formatted_address, place.formatted_phone_number, open_to_close, place.website);
+            setPlaceInfoOnMap(place.name, place.formatted_address, place.formatted_phone_number, open_to_close, place.website);
+
+            setPlaceInfo(place.place_id, place.name, place.formatted_address, place.formatted_phone_number, open_to_close, place.website);
 
             google.maps.event.addListener(marker, 'click', function() {
               infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
@@ -47,12 +58,22 @@ $(document).ready(function() {
       }
 
     // Retrive and set place info on page
-    function setPlaceInfo (name, address, phone, hours, website) {
+    function setPlaceInfoOnMap (name, address, phone, hours, website) {
       $('#name').text('Name: ' + name);
       $('#address').text('Address: ' + address);
       $('#phone').text('Phone: ' + phone);
       $('#hours').text('Hours: ' + hours);
       $('#website').text('Website: ' + website);
+    };
+
+        // Retrive and set place info on page
+    function setPlaceInfo (placeID, name, address, phone, hours, website) {
+      placeID1 = placeID;
+      name1 = name;
+      address1 = address;
+      phone1 = phone;
+      hours1 = hours;
+      website1 = website;
     };
 
 });
