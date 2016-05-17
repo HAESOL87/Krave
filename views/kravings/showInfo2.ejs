@@ -11,8 +11,8 @@
     }
     </style>
 
-    <script type="text/javascript" src="/javascripts/test.js"></script>
-    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/script2.js"></script>
 
 </head>
 
@@ -30,6 +30,7 @@
     <div id="map"></div>
 
      <div>
+      <h4 id ="kraving">Kraving: <%=favorite.kravingName %></h4>
       <h4 id ="name">Name:</h4>
       <h4 id ="address">Address:</h4>
       <h4 id ="phone">Phone:</h4>
@@ -47,5 +48,12 @@
   <footer>
     <% include ../partials/footer %>
   </footer>
+
+  <script type="text/javascript">
+    var favPlaceId = "<%=favorite.placeID%>"
+  </script>
+
 </body>
 </html>
+
+
