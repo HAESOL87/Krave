@@ -1,0 +1,18 @@
+
+h1 {
+  font-size: 70px;
+  }
+
+p {
+  text-align: center;
+  font-size: 30px;
+}
+input[type="text"] {
+             display: block;
+             margin : 0 auto;
+        }
+
+div {
+  text-align: center;
+}
+
