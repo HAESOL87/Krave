@@ -59,7 +59,6 @@ $(document).ready(function() {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
-            //getPlace(results[i]);
           }
           getPlace(results);
         }
@@ -87,10 +86,8 @@ $(document).ready(function() {
         console.log(results[0].name);
         console.log(kraveId);
         for (var i = 0; i < results.length; i++) {
-        $('#place').append("<br /><a href='/kravings/" + kraveId + "/info'>" +  results[i].name + "</a><br />");
-      }
-
-
+          $('#place').append("<br /><a href='/kravings/" + kraveId + "/info'>" +  results[i].name + "</a><br />");
+        }
       }
 
 });
