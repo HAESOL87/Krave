@@ -3,6 +3,7 @@ $(document).ready(function() {
       var map;
       var infowindow;
 
+      var kraveName = $('#name').text();
       var kraveCity = $('#city').text();
       var kraveState = $('#state').text();
       var kraveZip = $('#zip').text();
@@ -22,8 +23,6 @@ $(document).ready(function() {
       // }
 
       window.initMap = function() {
-        //var latlong = {lat: 33.7490, lng: -84.3880};
-        //var latlong = {};
         getCoordinates(address, createMap);
       };
 
@@ -38,6 +37,7 @@ $(document).ready(function() {
 
       function createMap(latlong) {
         console.log('getCoordinates callback got latlong = ', latlong);
+        console.log(kraveName);
         map = new google.maps.Map(document.getElementById('map'), {
           center: latlong,
           zoom: 15
@@ -47,8 +47,9 @@ $(document).ready(function() {
 
         service.nearbySearch({
           location: latlong,
-          radius: 500,
-          type: ['restaurant']
+          radius: 2000,
+          types: ['restaurant' | 'food' | 'cafe' | 'grocery_or_supermarket'],
+          keyword: kraveName
         }, processSearchResults);
       }
 
@@ -57,7 +58,9 @@ $(document).ready(function() {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
+            //getPlace(results[i]);
           }
+          getPlace(results);
         }
         else {
           console.log('status:', status);
@@ -66,6 +69,7 @@ $(document).ready(function() {
 
       function createMarker(place) {
         console.log('createMarker called with place = ', place);
+        //console.log(place.name);
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
           map: map,
@@ -76,6 +80,15 @@ $(document).ready(function() {
           infowindow.setContent(place.name, place.opening_hours);
           infowindow.open(map, this);
         });
+      }
+
+      function getPlace(results) {
+        console.log(results[0].name);
+        for (var i = 0; i < results.length; i++) {
+        $('#place').append("<br /><a href='/kravings/<%= kraving._id %>/info'>" +  results[i].name + "</a><br />");
+      }
+
+
       }
 
 });
