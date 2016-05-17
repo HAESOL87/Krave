@@ -85,7 +85,7 @@ $(document).ready(function() {
       function getPlace(results) {
         console.log(results[0].name);
         for (var i = 0; i < results.length; i++) {
-        $('#place').append("<a href='/kravings/<%= kraving._id %>/info'>" +  results[i].name + "</a>");
+        $('#place').append("<br /><a href='/kravings/<%= kraving._id %>/info'>" +  results[i].name + "</a><br />");
       }
 
 
