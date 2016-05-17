@@ -30,9 +30,7 @@
     <p><b>State: </b><span id="state"><%= kraving.state %></span></p>
     <p><b>Zip Code: </b><span id="zip"><%= kraving.zip %></span></p>
 
-    <div id="place">Places:</div>
-
-    <form id="places" action="/kravings/<%= kraving._id %>/info?_method=PUT" method="post">
+    <form id="places" action="/kravings/<%= kraving._id %>/info?_method=PUT" method="post">Places:<br />
     </form>
 
     <div id="map"></div>
