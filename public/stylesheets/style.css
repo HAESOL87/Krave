@@ -7,25 +7,24 @@ a:hover, a:focus {
     color: #3333;
     text-decoration: none;
 }
-/*@import url(https://fonts.googleapis.com/css?family=Dosis:400,500,600,300|Neucha);*/
+@import url(https://fonts.googleapis.com/css?family=Rubik:500,700);
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,500,600,300|Neucha);
 @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
 html{
   height: 100%;
   -webkit-font-smoothing: antialiased;
-  color: black;
-  font-size: 1.7em;
 }
 body {
-  font-family: 'Fjalla One', 'Merriweather', serif;
-  font color: black;
-  /*background-image: url("http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/05/Black-Background-Images-11.jpg");*/
-background-size: 100%;
-
+  font-family: 'Rubik', sans-serif, 'Fjalla One', 'Merriweather', serif;
+  font color: white ;
+  background-color: blue ;
+  /*background-image: url("http://imgur.com/eGlgzMn");*/
+  /*background-size: 100%;*/
 }
 
 h3, h4, h5 {
-  font-family: 'Fjalla One';
-  text-align: center;
+  font-family: 'Rubik', sans-serif, 'Fjalla One';
+  text-align: left;
 }
 h5 {
   text-align: center;
@@ -33,7 +32,7 @@ h5 {
 }
 
 h1 {
-  font-family: 'Fjalla One';
+  font-family: 'Rubik', sans-serif, 'Fjalla One';
   font-size: 3.5em;
   font-weight: 600;
   color: black;
@@ -41,10 +40,27 @@ h1 {
 }
 
 h2 {
-  font-family: 'Fjalla One';
+  font-family: 'Rubik', sans-serif 'Fjalla One';
   font-size: 1.8em;
   font-weight: 600;
   text-align: center;
+}
+img {
+  width: 110px;
+  height: 110px;
+  position: absolute;
+  margin-left: 3.5%;
+  /*margin-left: 45.8%;*/
+  margin-top: 6px;
+  z-index: 1;
+  border-color: red;
+  background-color: transparent;
+  border-radius: 50%;
+  animation-name: image;
+  animation-duration: 2s;
+  animation-transition: ease-out;
+  box-shadow: 0 4px 5px 0 red, 0 1px 10px 0 red, 0 2px 4px 0px red;
+
 }
 
 .title hr {
@@ -54,34 +70,36 @@ h2 {
 
 }
 
-.jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px;
+.jumbotron , .container-fluid {
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-bottom: 30px;
-  color: inherit;
-  background-color: #eeeeee;
+  background-color: transparent;
+
   border-radius: 25%;
+
 }
-.jumbotron h1,
+/*.jumbotron h1,
 .jumbotron .h1 {
   color: inherit;
-}
+}*/
 .jumbotron p {
   margin-bottom: 15px;
   font-size: 21px;
   font-weight: 200;
+  opacity: .8;
+  border-radius: 25%;
 }
 .jumbotron > hr {
-  border-top-color: #d5d5d5;
+  border-top-color: #3333;
+  opacity: .8;
 }
 .container .jumbotron,
-.container-fluid .jumbotron {
+.jumbotron {
   border-radius: 9px;
   padding-left: 15px;
   padding-right: 15px;
-}
-.jumbotron .container {
-  max-width: 100%;
+  opacity: .9;
 }
 .thumbnail {
   display: block;
@@ -194,10 +212,9 @@ label.error {
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-  float: right;
-    position: relative;
+    float: right;
     display: inline-block;
-    background-color: white;
+    background-color: transparent;
     color: black;
     border: 2px solid #555555;
     border-radius: 25%
@@ -250,8 +267,8 @@ label.error {
   float: right;
   align: left;
 }*/
-.footer{
+.footer, .text-center{
   padding: 20px 16px;
-  position: center;
   align: center;
+  font-size: 15px;
 }

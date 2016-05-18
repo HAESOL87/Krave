@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
 /* GET about page. */
 router.get('/about', function(req, res, next) {
   res.render('about');
->>>>>>> d328d66203f0c986f892819f4edb1370d788708b
 });
 
 module.exports = router;
