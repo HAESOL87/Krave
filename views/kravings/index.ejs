@@ -5,6 +5,7 @@
 </head>
 
 <body class="container-fluid">
+<a href="http://imgur.com/Zz3Uc8N"><img src="http://i.imgur.com/Zz3Uc8N.png?1" title="source: imgur.com" /></a>
   <header>
     <% include ../partials/header %>
   </header>
@@ -19,15 +20,28 @@
               <%= kraving.name %>
             </a>
             <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+
           </form>
         </h4>
       <% }) %>
     </div>
     <a href="/kravings/new" class="btn btn-primary">New</a>
+<!-- <div class="placeholders">
+<div class="placeholder1">
+    <img src="http://placehold.it/350x150">
+    </div>
+    <div class="placeholder2">
+    <img src="http://placehold.it/350x150">
+    </div>
+    <div class="placeholder3">
+    <img src="http://placehold.it/350x150">
+    </div>
+  </div> -->
   </main>
-
+<div class="footer">
   <footer>
     <% include ../partials/footer %>
   </footer>
+  </div>
 </body>
 </html>

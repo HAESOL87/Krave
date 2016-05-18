@@ -1,8 +1,274 @@
+a {
+  color: #0000;
+  -webkit-transition: all 0.25s ease 0s;
+    transition: all 0.25s ease 0s;
+}
+a:hover, a:focus {
+    color: #3333;
+    text-decoration: none;
+}
+@import url(https://fonts.googleapis.com/css?family=Rubik:500,700);
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,500,600,300|Neucha);
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+html{
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Rubik', sans-serif, 'Fjalla One', 'Merriweather', serif;
+  font color: white ;
+  background-color: blue ;
+  /*background-image: url("http://imgur.com/eGlgzMn");*/
+  /*background-size: 100%;*/
 }
 
-a {
-  color: #ff0037;
+h3, h4, h5 {
+  font-family: 'Rubik', sans-serif, 'Fjalla One';
+  text-align: left;
+}
+h5 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+h1 {
+  font-family: 'Rubik', sans-serif, 'Fjalla One';
+  font-size: 3.5em;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Rubik', sans-serif 'Fjalla One';
+  font-size: 1.8em;
+  font-weight: 600;
+  text-align: center;
+}
+img {
+  width: 110px;
+  height: 110px;
+  position: absolute;
+  margin-left: 3.5%;
+  /*margin-left: 45.8%;*/
+  margin-top: 6px;
+  z-index: 1;
+  border-color: red;
+  background-color: transparent;
+  border-radius: 50%;
+  animation-name: image;
+  animation-duration: 2s;
+  animation-transition: ease-out;
+  box-shadow: 0 4px 5px 0 red, 0 1px 10px 0 red, 0 2px 4px 0px red;
+
+}
+
+.title hr {
+  max-width: 125px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.jumbotron , .container-fluid {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  background-color: transparent;
+
+  border-radius: 25%;
+
+}
+/*.jumbotron h1,
+.jumbotron .h1 {
+  color: inherit;
+}*/
+.jumbotron p {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+  opacity: .8;
+  border-radius: 25%;
+}
+.jumbotron > hr {
+  border-top-color: #3333;
+  opacity: .8;
+}
+.container .jumbotron,
+.jumbotron {
+  border-radius: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  opacity: .9;
+}
+.thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-transition: border 0.2s ease-in-out;
+  -o-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+}
+.thumbnail > img,
+.thumbnail a > img {
+  margin-left: auto;
+  margin-right: auto;
+}
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+  border-color: #ff0000;
+}
+/* Change the link color to #111 (black) on hover */
+.container-fluid {
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: none;
+}
+.form-control {
+  border-radius: 3px;
+}
+.form-control:focus {
+  border-color: #999999;
+  outline: 0 none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+label.error {
+  color: #f25454;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: -15px;
+}
+.btn {
+  font-family: 'Fjalla One','Neucha', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 2px none;
+  border-radius: 25%;
+  padding: 12px 20px;
+  -webkit-transition: all 0.25s ease 0s;
+    transition: all 0.25s ease 0s;
+}
+.btn-lg {
+  font-size: 16px;
+  padding: 15px 30px;
+}
+
+.btn-primary {
+   background-color: white;
+    color: black;
+    border: 2px solid #000;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  background: red;
+}
+.btn-success {
+  background: #00BF6F;
+    color: #ffffff;
+}
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-success {
+  background: #00A55B;
+}
+.btn-teal {
+  background: #1abc9c;
+    color: #ffffff;
+}
+.btn-danger {
+  background: #f25454;
+  color: #fff;
+}
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open > .dropdown-toggle.btn-danger {
+  background: #d64a4a;
+}
+.btn-warning {
+  background: #ea8825;
+  color: #ffffff;
+}
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open > .dropdown-toggle.btn-warning {
+  background: #ce7721;
+}
+.alert {
+  border-radius: 3px;
+}
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: white;
+    color: red;
+    padding: 16px;
+    font-size: 16px;
+    border: 2px;
+    cursor: pointer;
+    border-radius: 25%;
+    float: right;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    float: right;
+    display: inline-block;
+    background-color: transparent;
+    color: black;
+    border: 2px solid #555555;
+    border-radius: 25%
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    background-color: transparent;
+    min-width: 160px;
+    float: right;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: transparent;
+  color: red;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: black;
+}
+/*.placeholders{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    align: left;
+    border-radius: 75%;
+}
+.placeholder1{
+  float: left;
+}
+.placeholder2{
+  float: right;
+  align: left;
+}*/
+.footer, .text-center{
+  padding: 20px 16px;
+  align: center;
+  font-size: 15px;
 }

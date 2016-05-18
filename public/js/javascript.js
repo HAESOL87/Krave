@@ -11,19 +11,7 @@ $(document).ready(function() {
       var address = kraveCity + ", " + kraveState + " " + kraveZip;
             $('#nameField').val(name);
 
-
       console.log(address);
-
-      // window.getCoordinates = function(address, callback) {
-      //   var coordinates;
-
-      //   geocoder.geocode({ address: address }, function(results, status) {
-      //     coords_lat = results[0].geometry.location.lat();
-      //     coords_lng = results[0].geometry.location.lng();
-      //     coordinates = [coords_lat, coords_lng];
-      //     callback(coordinates);
-      //   });
-      // }
 
       window.initMap = function() {
         getCoordinates(address, createMap);
@@ -88,41 +76,15 @@ $(document).ready(function() {
       function getPlace(results) {
         console.log(results[0].name);
         console.log(kraveId);
+        var placesElement = $('#places');
         for (var i = 0; i < results.length; i++) {
-
-                    $('#places').append("<br /><a href='/kravings/" + kraveId + "/info' type='submit'>" +  results[i].name + "</a><br /><input type='text' id='placeid" + i + "' value='" + results[i].place_id + "'><br /><button id='hello'" + i + " type='submit' class='btn btn-success'>Info</button>");
+            let div = $('<div style="margin-top: 20px"></div>');
+            let label = results[i].name + ' (' + results[i].place_id + ')';
+            div.append($('<p></p>').text(label));
+            var url = '/kravings/' + kraveId + '/info/' + results[i].place_id;
+            div.append($('<a></a>').attr('href', url).html('Info'));
+            div.append('<hr/>')
+            placesElement.append(div);
         }
       }
-
-      $("button").click(function() {
-       var test = $(this).attr('id');
-       var test2 = test.slice(5); // I get the i
-       console.log(test);
-       console.log(test2);
-
-       var test3 = 'placeid' + test2;
-
-       console.log(test3);
-
-       var test4 = $("#"+test3+"").val();  // with the i get value of placeidi
-
-       console.log(test4);
-
-       $('#place12').val(test4);
-
-       // $('#k').append("<input type='text' name='place1' value='" + test4 + "'>");
-
-
-      });
-
-
-
-
 });
-
-// <a href='/kravings/" + kraveId + "/info' type='submit'>" +  results[i].name + "</a><br />
-
-// <input type='text' name='placeid0 "' value='" + results[i].place_id + "' id='placeidField'>
-
-// <button id='hello'" + i + " type='submit' class='btn btn-success'>Info</button>
-

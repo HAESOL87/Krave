@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 
 var Kraving = require('../models/kraving');
-var Favorite = require('../models/fav');
-
 
 function makeError(res, message, status) {
   res.statusCode = status;
@@ -45,28 +43,13 @@ router.get('/:id', function(req, res, next) {
 });
 
 // Show Info
-router.get('/:id/info', function(req, res, next) {
-  console.log("I'm here!")
-  Kraving.findById(req.params.id)
+router.get('/:kraving/info/:place', function(req, res, next) {
+  console.log("I'm here!");
+  console.log('req.params:', req.params);
+  Kraving.findById(req.params.kraving)
   .then(function(kraving) {
     if (!kraving) return next(makeError(res, 'Document not found', 404));
-    res.render('kravings/showInfo', { kraving: kraving});
-  }, function(err) {
-    return next(err);
-  });
-});
-
-// Update Info
-router.put('/:id/info', function(req, res, next) {
-  Kraving.findById(req.params.id)
-  .then(function(kraving) {
-    if (!kraving) return(makeError(res, 'Document not found', 404));
-    console.log(req.body);
-    kraving.placeid = req.body.place1;
-    return kraving.save();
-  })
-  .then(function(saved) {
-    res.redirect('/kravings/' + saved._id + '/info');
+    res.render('kravings/showInfo', { kraving: kraving, currentPlaceId: req.params.place});
   }, function(err) {
     return next(err);
   });

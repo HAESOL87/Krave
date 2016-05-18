@@ -1,24 +1,53 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <% include partials/head %>
-</head>
+<!DOCTYPE html>
+<html>
+<link rel='stylesheet' href='/stylesheets/style.css' />
 
-<body class="container-fluid">
-  <header>
-    <% include partials/header %>
-  </header>
+  <head>
+    <title><%= title %></title>
 
-  <main>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+      </a>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <div class="dropdown">
+  <button class="dropbtn">Menu</button>
+  <div class="dropdown-content">
+    <a href="/">Home</a>
+    <a href="/kravings">KRAVs</a>
+    <a href="/favs">FAVs</a>
+  </div>
+</div>
+    </ul>
+  </div>
+
+</nav>
     <div class="jumbotron">
-      <h1>Welcome to our Kravings App</h1>
-  </main>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+     <h2>What are you Kraving?</h2>
 
-  <footer>
-    <% include partials/footer %>
-  </footer>
-
- </body>
+<form>
+ <div>
+  User Name:<br>
+ </div>
+  <input type="text" username="username"><br>
+  <div>
+  Password:<br>
+  </div>
+  <input type="text" name="password">
+  <button type="submit">Log In</button>
+  <a href="http://www.w3schools.com/html/">Create Account</a>
+</form>
+  </body>
+  </div>
 </html>
 
 
