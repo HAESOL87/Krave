@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
+
 var Kraving = require('./kraving');
 var Favorite = require('./fav');
 

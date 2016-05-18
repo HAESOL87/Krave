@@ -87,5 +87,4 @@ $(document).ready(function() {
             placesElement.append(div);
         }
       }
-
 });

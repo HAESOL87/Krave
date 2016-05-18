@@ -48,7 +48,7 @@ h2 {
 img {
   width: 110px;
   height: 110px;
-  position: absolute;
+  position: relative;
   margin-left: 3.5%;
   /*margin-left: 45.8%;*/
   margin-top: 6px;
