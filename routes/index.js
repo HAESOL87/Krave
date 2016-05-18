@@ -47,4 +47,10 @@ router.get('/logout', function(req, res, next) {
   res.redirect('/');
 });
 
+// GET /about
+router.get('/about', function(req, res, next) {
+  res.render('about.ejs', { message: req.flash()} );
+});
+
+
 module.exports = router;
