@@ -34,18 +34,24 @@
     <p>Welcome to <%= title %></p>
      <h2>What are you Kraving?</h2>
 
-<form>
- <div>
-  User Name:<br>
- </div>
-  <input type="text" username="username"><br>
-  <div>
-  Password:<br>
+<form method="post" action="/login">
+   <div class="form-group">
+      <label for="email">User Name:</label>
+      <input class="form-control" type="text" name="email" id="email">
   </div>
-  <input type="text" name="password">
+
+            <div class="form-group">
+              <label for="email">Password</label>
+              <input class="form-control" type="password" name="password" id="password">
+            </div>
+
+
   <button type="submit">Log In</button>
-  <a href="http://www.w3schools.com/html/">Create Account</a>
-</form>
+  </form>
+
+  <a href="/signup">Create Account</a>
+
+
   </body>
   </div>
 </html>

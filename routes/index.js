@@ -1,6 +1,6 @@
-var passport = require('passport');
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
 
 
 /* GET home page. */
@@ -18,7 +18,7 @@ router.get('/signup', function(req, res, next) {
 router.post('/signup', function(req, res, next) {
   var signUpStrategy = passport.authenticate('local-signup', {
     successRedirect : '/kravings',
-    failureRedirect : '/signup',
+    failureRedirect : '/',
     failureFlash : true
   });
 
@@ -34,7 +34,7 @@ router.get('/login', function(req, res, next) {
 router.post('/login', function(req, res, next) {
   var loginProperty = passport.authenticate('local-login', {
     successRedirect : '/kravings',
-    failureRedirect : '/login',
+    failureRedirect : '/',
     failureFlash : true
   });
 
