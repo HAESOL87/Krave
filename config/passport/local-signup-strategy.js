@@ -4,11 +4,10 @@ var User            = require('../../models/user');
 var strategy = new LocalStrategy({
     usernameField : 'email',
     passwordField : 'password',
-    firstnameField : 'firstname',
-    lastnameField : 'lastname',
     passReqToCallback : true
   },
-  function(req, email, password, firstname, lastname, callback) {
+  function(req, email, password, callback) {
+
     // Find a user with this e-mail
     User.findOne({ 'local.email' :  email }, function(err, user) {
       if (err) return callback(err);
@@ -21,8 +20,8 @@ var strategy = new LocalStrategy({
         var newUser            = new User();
         newUser.local.email    = email;
         newUser.local.password = newUser.encrypt(password);
-        newUser.local.firstname = firstname;
-        newUser.local.lastname = lastname;
+        newUser.local.firstname = req.body.firstname;
+        newUser.local.lastname = req.body.lastname;
 
         newUser.save(function(err) {
           return callback(err, newUser);
