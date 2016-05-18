@@ -5,7 +5,6 @@ var KravingSchema = new mongoose.Schema({
   city:  String,
   state: String,
   zip:   Number,
-  placeid: String
 }, {timestamps: true});
 
 module.exports = mongoose.model('Kraving', KravingSchema);
