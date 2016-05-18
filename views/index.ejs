@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/custom.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-<form>
- <div>
-  User Name:<br>
- </div>
-  <input type="text" username="username"><br>
-  <div>
-  Password:<br>
-  </div>
-  <input type="text" name="password">
-  <button type="submit">Log In</button>
-  <a href="http://www.w3schools.com/html/">Create Account</a>
-</form>
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+  <% include partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include partials/header %>
+  </header>
+
+  <main>
+    <div class="jumbotron">
+      <h1>Welcome to our Kravings App</h1>
+  </main>
+
+  <footer>
+    <% include partials/footer %>
+  </footer>
+
+ </body>
 </html>
 
 

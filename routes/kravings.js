@@ -61,7 +61,7 @@ router.put('/:id/info', function(req, res, next) {
   Kraving.findById(req.params.id)
   .then(function(kraving) {
     if (!kraving) return(makeError(res, 'Document not found', 404));
-    console.log(req.body.place1);
+    console.log(req.body);
     kraving.placeid = req.body.place1;
     return kraving.save();
   })
