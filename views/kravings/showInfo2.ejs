@@ -2,6 +2,18 @@
 <html lang="en">
 <head>
   <% include ../partials/head %>
+    <style>
+   #map {
+      width: 500px;
+      height: 400px;
+      background-color: #CCC;
+      float: right;
+    }
+    </style>
+
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/script2.js"></script>
+
 </head>
 
 <body class="container-fluid">
@@ -10,17 +22,39 @@
   </header>
 
   <main>
+
     <div>
       <h3>Fav Kravs</h3>
+
     </div>
 
-    <a href="/favs" class="btn btn-primary">Back</a>
-    <a href="/kravings" class="btn btn-primary">HOME</a>
+    <div id="map"></div>
+
+     <div>
+      <h4 id ="kraving">Kraving: <%=favorite.kravingName %></h4>
+      <h4 id ="name">Name:</h4>
+      <h4 id ="address">Address:</h4>
+      <h4 id ="phone">Phone:</h4>
+      <h4 id ="hours">Hours:</h4>
+      <h4 id ="website">Website:</h4>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer></script>
+
+      <a href="/favs" class="btn btn-primary">Back</a>
+      <a href="/kravings" class="btn btn-primary">HOME</a>
 
  </main>
 
   <footer>
     <% include ../partials/footer %>
   </footer>
+
+  <script type="text/javascript">
+    var favPlaceId = "<%=favorite.placeID%>"
+  </script>
+
 </body>
 </html>
+
+
