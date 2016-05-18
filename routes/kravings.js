@@ -44,8 +44,6 @@ router.get('/:id', function(req, res, next) {
 
 // Show Info
 router.get('/:kraving/info/:place', function(req, res, next) {
-  console.log("I'm here!");
-  console.log('req.params:', req.params);
   Kraving.findById(req.params.kraving)
   .then(function(kraving) {
     if (!kraving) return next(makeError(res, 'Document not found', 404));

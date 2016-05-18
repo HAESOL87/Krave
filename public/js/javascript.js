@@ -11,8 +11,6 @@ $(document).ready(function() {
       var address = kraveCity + ", " + kraveState + " " + kraveZip;
             $('#nameField').val(name);
 
-      console.log(address);
-
       window.initMap = function() {
         getCoordinates(address, createMap);
       };
@@ -28,7 +26,6 @@ $(document).ready(function() {
 
       function createMap(latlong) {
         console.log('getCoordinates callback got latlong = ', latlong);
-        console.log(kraveName);
         map = new google.maps.Map(document.getElementById('map'), {
           center: latlong,
           zoom: 15
@@ -74,13 +71,27 @@ $(document).ready(function() {
       }
 
       function getPlace(results) {
-        console.log(results[0].name);
-        console.log(kraveId);
         var placesElement = $('#places');
+        var notApplicable = 'N/A';
         for (var i = 0; i < results.length; i++) {
+            let label1;
+            let label2;
             let div = $('<div style="margin-top: 20px"></div>');
-            let label = results[i].name + ' (' + results[i].place_id + ')';
-            div.append($('<p></p>').text(label));
+            if (results[i].rating === undefined) {
+            label1 = results[i].name + ' - ' + 'Rating: ' + notApplicable;
+            }
+            else {
+            label1 = results[i].name + ' - ' + 'Rating: ' + results[i].rating;
+            }
+            if (results[i].price_level === undefined) {
+            label2 = results[i].vicinity + ' - ' + 'Price Level: ' + notApplicable;
+            }
+            else {
+            label2 = results[i].vicinity + ' - ' + 'Price Level: ' + results[i].price_level;
+            }
+            //let label = results[i].name + ' (' + results[i].place_id + ')';
+            div.append($('<p id="label1"></p>').text(label1));
+            div.append($('<p id="label2"></p>').text(label2));
             var url = '/kravings/' + kraveId + '/info/' + results[i].place_id;
             div.append($('<a></a>').attr('href', url).html('Info'));
             div.append('<hr/>')
