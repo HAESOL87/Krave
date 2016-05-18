@@ -14,16 +14,18 @@
 
   <main>
     <div>
-      <h3>KRAVINGs:</h3>
+      <h3>My KRAVINGs:</h3>
       <% kravings.forEach(function(kraving) { %>
         <h4>
-          <form method="POST" action="/kravings/<%= kraving._id %>?_method=DELETE">
             <a href="/kravings/<%= kraving._id %>">
               <%= kraving.name %>
             </a>
-            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
-
-          </form>
+            <form method="GET" action="/kravings/<%= kraving._id %>/edit">
+              <button type="submit" class="btn btn-xs btn-danger">Edit</button>
+            </form>
+            <form method="POST" action="/kravings/<%= kraving._id %>?_method=DELETE">
+              <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+            </form>
         </h4>
       <% }) %>
     </div>

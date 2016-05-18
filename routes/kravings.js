@@ -44,8 +44,6 @@ router.get('/:id', function(req, res, next) {
 
 // Show Info
 router.get('/:kraving/info/:place', function(req, res, next) {
-  console.log("I'm here!");
-  console.log('req.params:', req.params);
   Kraving.findById(req.params.kraving)
   .then(function(kraving) {
     if (!kraving) return next(makeError(res, 'Document not found', 404));
@@ -83,23 +81,23 @@ router.get('/:id/edit', function(req, res, next) {
 });
 
 
-// // Update Kraving
-// router.put('/:id', function(req, res, next) {
-//   Kraving.findById(req.params.id)
-//   .then(function(kravings) {
-//     if (!kraving) return(makeError(res, 'Document not found', 404));
-//     kraving.name = req.body.name;
-//     kraving.city = req.body.city;
-//     kraving.state = req.body.state;
-//     kraving.zip = req.body.zip;
-//     return kraving.save();
-//   })
-//   .then(function(saved) {
-//     res.redirect('/kravings');
-//   }, function(err) {
-//     return next(err);
-//   });
-// });
+// Update Kraving
+router.put('/:id', function(req, res, next) {
+  Kraving.findById(req.params.id)
+  .then(function(kraving) {
+    if (!kraving) return(makeError(res, 'Document not found', 404));
+    kraving.name = req.body.name;
+    kraving.city = req.body.city;
+    kraving.state = req.body.state;
+    kraving.zip = req.body.zip;
+    return kraving.save();
+  })
+  .then(function(saved) {
+    res.redirect('/kravings');
+  }, function(err) {
+    return next(err);
+  });
+});
 
 // Destroy Kraving
 router.delete('/:id', function(req, res, next) {

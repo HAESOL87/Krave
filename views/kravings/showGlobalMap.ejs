@@ -26,14 +26,14 @@
   <header>
     <% include ../partials/header %>
   </header>
-    <p><b>Name: </b><span id="name"><%= kraving.name %></span></p>
+    <p><b>Kraving: </b><span id="name"><%= kraving.name %></span></p>
     <p><b>City: </b><span id="city"><%= kraving.city %></span></p>
     <p><b>State: </b><span id="state"><%= kraving.state %></span></p>
     <p><b>Zip Code: </b><span id="zip"><%= kraving.zip %></span></p>
 
-
     <div id="places">Places:<br />
     </div>
+
 
     <div id="map"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer></script>
