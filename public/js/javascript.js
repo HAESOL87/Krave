@@ -90,7 +90,7 @@ $(document).ready(function() {
         console.log(kraveId);
         for (var i = 0; i < results.length; i++) {
 
-                    $('#places').append("<br /><a href='/kravings/" + kraveId + "/info' type='submit'>" +  results[i].name + "</a><br /><input type='text' id='placeid" + i + "' value='" + results[i].place_id + "' id='placeidField'><br /><button id='hello'" + i + " type='submit' class='btn btn-success'>Info</button>");
+                    $('#places').append("<br /><a href='/kravings/" + kraveId + "/info' type='submit'>" +  results[i].name + "</a><br /><input type='text' id='placeid" + i + "' value='" + results[i].place_id + "'><br /><button id='hello'" + i + " type='submit' class='btn btn-success'>Info</button>");
         }
       }
 
@@ -108,11 +108,9 @@ $(document).ready(function() {
 
        console.log(test4);
 
-       var test5 = $('#place').val();
+       $('#place12').val(test4);
 
-       console.log("Test" + test5);
-
-       $('#place').append("<br/><input type='text' id='place' value='" + test5 + "'>");
+       // $('#k').append("<input type='text' name='place1' value='" + test4 + "'>");
 
 
       });
