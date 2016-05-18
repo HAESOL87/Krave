@@ -14,6 +14,10 @@
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/script.js"></script>
 
+    <script>
+      var currentPlaceId = "<%= currentPlaceId %>";
+    </script>
+
 </head>
 
 <body class="container-fluid">
@@ -44,9 +48,9 @@
       <a href="/kravings/" class="btn btn-primary">HOME</a>
 
 
-      <input type="text" name="kravingName" id="kravingField" value="<%= kraving.name%>">
-      <input type="text" name="placeName" id="placeNameField">
-      <input type="text" name="placeID" id="placeIDField">
+      <input type="hidden" name="kravingName" id="kravingField" value="<%= kraving.name%>">
+      <input type="hidden" name="placeName" id="placeNameField">
+      <input type="hidden" name="placeID" id="placeIDField">
 
 
       <button id="hello" type="submit" class="btn btn-success">Save</button>

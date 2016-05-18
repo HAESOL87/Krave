@@ -6,7 +6,7 @@ $(document).ready(function() {
         var service = new google.maps.places.PlacesService(map);
 
         service.getDetails({
-          placeId: 'ChIJfTK9iWcE9YgRbZH2RIa6Ajc'
+          placeId: currentPlaceId
         }, function(place, status) {
           newPlace = place;
           console.log(place);
