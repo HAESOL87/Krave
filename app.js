@@ -19,9 +19,9 @@ var users = require('./routes/users');
 var kravingsRouter = require('./routes/kravings');
 var favoritesRouter = require('./routes/favs');
 
-var mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost/kraving'
+//var mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost/kraving'
 
-mongoose.connect(mongoUrl);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/kraving');
 
 var app = express();
 
