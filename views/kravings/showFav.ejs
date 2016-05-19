@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel='stylesheet' href='/stylesheets/modaltest2.css'/>
-<style>
-html, body, #map-canvas  {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-#map-canvas {
-  width:500px;
-  height:480px;
-}
-</style>
 <head>
   <% include ../partials/head %>
 
@@ -46,36 +34,60 @@ html, body, #map-canvas  {
 
     <div><a href="/kravings" class="btn btn-primary">Back</a></div>
 
-<h1 class="">Lazy Load Google Map</h1>
-<a href="#myMapModal" class="btn" data-toggle="modal">Launch Map Modal</a>
+<div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3></h3>
+  </div>
+  <div class="modal-body">
+    <div id="mapCanvas" style="width: 500px; height: 400px"></div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+  </div>
+</div>
 
-<div class="modal fade" id="myMapModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                 <h4 class="modal-title">Modal title</h4>
+<!--
+<div id="popup" class="modal-box">
+  <header>
+    <a href="#" class="js-modal-close close">×</a>
+    <h3><a href="http://www.jqueryscript.net/tags.php?/Modal/">Modal</a> Title</h3>
 
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <div class="row">
-                        <div id="map-canvas" class=""></div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
+    <style>
+   #map {
+      width: 300px;
+      height: 300px;
+      background-color: #CCC;
+      float: right;
+    }
+    </style>
+
+  </header>
+  <div class="modal-body">
+    <p>Modal Body</p>
+      <h4 id ="kraving">Kraving:</h4>
+      <h4 id ="name">Name:</h4>
+      <h4 id ="address">Address:</h4>
+      <h4 id ="phone">Phone:</h4>
+      <h4 id ="hours">Hours:</h4>
+      <h4 id ="website">Website:</h4>
+  </div>
+  <div id="map"></div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer>
+    initMap();
+
+  </script>
+
+  <footer>
+    <a href="#" class="js-modal-close">Close Button</a>
+  </footer>
+</div>
+ -->
 
  </main>
+
+ <a class="js-open-modal" href="#" data-modal-id="popup"> Click me </a>
 
   <footer>
     <% include ../partials/footer %>

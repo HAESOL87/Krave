@@ -52,4 +52,9 @@ router.get('/about', function(req, res, next) {
   res.render('about.ejs', { message: req.flash()} );
 });
 
+// GET /about
+router.get('/test', function(req, res, next) {
+  res.render('showModal2.ejs', { message: req.flash()} );
+});
+
 module.exports = router;
