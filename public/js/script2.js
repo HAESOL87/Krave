@@ -20,12 +20,7 @@ $(document).ready(function() {
               position: place.geometry.location
             });
 
-            var d = new Date();
-            var n = d.getDay();
-
-            var open_to_close = place.opening_hours.periods[n].open.time + ' - ' + place.opening_hours.periods[n].close.time;
-
-            setPlaceInfoFromMap(place.place_id, place.name, place.formatted_address, place.formatted_phone_number, open_to_close, place.website);
+            setPlaceInfoFromMap(place.place_id, place.name, place.formatted_address, place.formatted_phone_number, place.opening_hours, place.website);
 
             google.maps.event.addListener(marker, 'click', function() {
               infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
@@ -40,64 +35,60 @@ $(document).ready(function() {
 
     // Retrive and set place info on page
     function setPlaceInfoFromMap (placeID, name, address, phone, hours, website) {
+
+      var notApplicable = 'N/A';
+      var d = new Date();
+      var n = d.getDay();
+
+      let phoneText;
+      if (phone === undefined) {
+        phoneText = 'Phone: ' + notApplicable;
+      }
+      else {
+        phoneText = 'Phone: ' + phone;
+      }
+
+      let hoursText;
+      if(hours === undefined) {
+        hoursText = 'Hours: ' + notApplicable;
+      }
+      else if(hours.open_now === false) {
+        hoursText = 'Hours: Currently closed';
+      }
+      else {
+        var openTime = getFormattedTime(hours.periods[n].open.time);
+        var closeTime = getFormattedTime(hours.periods[n].close.time);
+        var open_to_close =  openTime + ' - ' + closeTime;
+        hoursText = 'Hours: ' + open_to_close;
+      }
+
+      let websiteText;
+      if (website === undefined) {
+        websiteText = 'Website: ' + notApplicable;
+      }
+      else {
+        websiteText = 'Website: ' + website;
+      }
+
       $('#name').text('Name: ' + name);
       $('#address').text('Address: ' + address);
-      $('#phone').text('Phone: ' + phone);
-      $('#hours').text('Hours: ' + hours);
-      $('#website').text('Website: ' + website);
+      $('#phone').text(phoneText);
+      $('#hours').text(hoursText);
+      $('#website').text(websiteText);
+
+      $('#placeNameField').val(name);
+      $('#placeIDField').val(placeID);
     };
 
-    //Modal
+    // Change time format
+    function getFormattedTime(fourDigitTime) {
+      var hours24 = parseInt(fourDigitTime.substring(0, 2),10);
+      var hours = ((hours24 + 11) % 12) + 1;
+      var amPm = hours24 > 11 ? 'pm' : 'am';
+      var minutes = fourDigitTime.substring(2);
 
-var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
-
-  $('a[data-modal-id]').click(function(e) {
-
-    e.preventDefault();
-
-    $("body").append(appendthis);
-
-    $(".modal-overlay").fadeTo(500, 0.7);
-
-    //$(".js-modalbox").fadeIn(500);
-
-    var modalBox = $(this).attr('data-modal-id');
-
-    $('#'+modalBox).fadeIn($(this).data());
-
-  });
-
-
-
-
-
-$(".js-modal-close, .modal-overlay").click(function() {
-
-  $(".modal-box, .modal-overlay").fadeOut(500, function() {
-
-    $(".modal-overlay").remove();
-
-  });
-
-});
-
-
-
-$(window).resize(function() {
-
-  $(".modal-box").css({
-
-    top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
-
-    left: ($(window).width() - $(".modal-box").outerWidth()) / 2
-
-  });
-
-});
-
-
-
-$(window).resize();
-
+    return hours + ':' + minutes + amPm;
+>>>>>>> f13022f3b7acf92997fde12619b265cfb27aa172
+    };
 
 });

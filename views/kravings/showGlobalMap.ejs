@@ -14,36 +14,82 @@
         margin: 0;
         padding: 20px;
       }
+      .nav {
+        width:1200px;
+        height: 100px;
+
+      }
       #map {
         width: 600px;
-        height: 500px;
+        height: 450px;
         float: right;
+      }
+      #places {
+        width: 500px;
+        height: 350px;
+        float: left;
+        overflow-y: scroll;
+/*        overflow-y: auto;*/
+      }
+      #main {
+      width: 1200px;
+      height: 800px;
+      position: relative;
+      }
+      #location {
+        padding: 0;
+      }
+      #label1 {
+        padding:0;
+      }
+      #label2, #label3 {
+        margin: 0;
       }
     </style>
   <script type="text/javascript" src="/js/jquery.js"></script>
 
   <script type="text/javascript" src="/js/javascript.js"></script>
-</head>
 
+<<<<<<< HEAD
 <body class="container-fluid">
   <header>
 
+=======
+    <header>
+    <% include ../partials/header %>
+>>>>>>> 8e4351340a20cdb49399d5bea23cb7bac37c8e00
   </header>
-    <p><b>Kraving: </b><span id="name"><%= kraving.name %></span></p>
-    <p><b>City: </b><span id="city"><%= kraving.city %></span></p>
-    <p><b>State: </b><span id="state"><%= kraving.state %></span></p>
-    <p><b>Zip Code: </b><span id="zip"><%= kraving.zip %></span></p>
 
-    <div id="places">Places:<br />
-    </div>
+</head>
 
+<body class="container-fluid">
 
-    <div id="map"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer></script>
 
-  <main>
+  <main id = "main">
 
-    <a href="/kravings/" class="btn btn-primary">Back</a>
+    <div class="wrapper">
+    <div class="row">
+    <div id = "location" class = "col-lg-5">
+      <div>
+      <p><b>Kraving: </b><span id="name"><%= kraving.name %></span></p>
+      <p><span id="city"><%= kraving.city %></span> , <span id="state"><%= kraving.state %></span> <span id="zip"><%= kraving.zip %> </span></p>
+      </div>
+
+      <h4>Places:</h4>
+      <div id="places"></div>
+
+    </div>
+
+    <div id="map" class = "col-lg-6"></div>
+    </div>
+
+    <div class="row-btn">
+      <div class="col-md-8 col-md-offset-1">
+        <a href="/kravings/" class="btn btn-primary">Back</a>
+      </div>
+    </div>
+  </div>
 
  </main>
 
@@ -52,6 +98,5 @@
   </footer>
 </body>
 </html>
-
 
 
