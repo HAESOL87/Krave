@@ -22,12 +22,7 @@ $(document).ready(function() {
               position: place.geometry.location
             });
 
-            var d = new Date();
-            var n = d.getDay();
-
-            var open_to_close = place.opening_hours.periods[n].open.time + ' - ' + place.opening_hours.periods[n].close.time;
-
-            setPlaceInfoFromMap(place.place_id, place.name, place.formatted_address, place.formatted_phone_number, open_to_close, place.website);
+            setPlaceInfoFromMap(place.place_id, place.name, place.formatted_address, place.formatted_phone_number, place.opening_hours, place.website);
 
             google.maps.event.addListener(marker, 'click', function() {
               infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
@@ -41,11 +36,36 @@ $(document).ready(function() {
 
     // Retrive and set place info on page
     function setPlaceInfoFromMap (placeID, name, address, phone, hours, website) {
+      var notApplicable = 'N/A';
+      var d = new Date();
+      var n = d.getDay();
+      var openTime = getFormattedTime(hours.periods[n].open.time);
+      var closeTime = getFormattedTime(hours.periods[n].close.time);
+
+
+      let hoursText;
+      if(hours === undefined) {
+        hoursText = 'Hours: ' + notApplicable;
+      }
+      else {
+
+        var open_to_close =  openTime + ' - ' + closeTime;
+        hoursText = 'Hours: ' + open_to_close;
+      }
+
+      let websiteText;
+      if (website === undefined) {
+        websiteText = 'Website: ' + notApplicable;
+      }
+      else {
+        websiteText = 'Website: ' + website;
+      }
+
       $('#name').text('Name: ' + name);
       $('#address').text('Address: ' + address);
       $('#phone').text('Phone: ' + phone);
-      $('#hours').text('Hours: ' + hours);
-      $('#website').text('Website: ' + website);
+      $('#hours').text(hoursText);
+      $('#website').text(websiteText);
 
       $('#placeNameField').val(name);
       $('#placeIDField').val(placeID);
@@ -60,9 +80,5 @@ $(document).ready(function() {
 
     return hours + ':' + minutes + amPm;
     };
-      // find all spans and replace their content
-      $('#hours').html(function( i, oldHtml){
-         return getFormattedTime(oldHtml);
-    })
 
 });
