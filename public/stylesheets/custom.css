@@ -37,7 +37,7 @@ list-style-type: none;
 
 }
 a{
-  padding:100px;
+  padding:20px;
   margin-right:0px auto;
   align: left;
 }
@@ -100,8 +100,8 @@ a{
 }
 .avatar {
   border: 5px solid red;
-  width: 550px;
-  height: 550px;
+  width: 250px;
+  height: 250px;
   border-radius: 100%;
   }
 div{
