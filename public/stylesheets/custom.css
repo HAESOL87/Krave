@@ -3,13 +3,15 @@
 
 body {
   font-family: 'Rubik', sans-serif, 'Fjalla One', 'Merriweather', serif;
-  font color: black ;
-  background-color: pink;
+  background-color: black;
   padding: 30px;
   text-transform: uppercase;
   margin: 0px auto;
   /*background-image: url("http://imgur.com/eGlgzMn");*/
   /*background-size: 100%;*/
+  background-size:100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 h2 {
   font-family: 'Rubik', sans-serif;
@@ -27,9 +29,10 @@ h2 {
 /*  opacity: .7;
 /**/  /*color: black;*/
   text-transform: uppercase;
-/*  border-radius: 2px;
-*/  text-align: center;
-
+  border-radius: 20px;
+  text-align: center;
+background:url('http://images6.fanpop.com/image/photos/36400000/msyugioh123-image-msyugioh123-36431377-1920-1200.jpg');
+background-size: 100%;
 }
 ul{
 list-style-type: none;
@@ -45,8 +48,8 @@ a{
   float:right;
 }
 #logo {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   position: relative;
   /*margin-left: 45.8%;*/
   margin-top: 6px;
@@ -89,7 +92,17 @@ a{
  margin: 0px auto;
 
 }
-.btn {
+.container-fluid{
+  background: url('http://www.zastavki.com/pictures/2560x1600/2011/Animals_Beasts_Cheetah_in_black-white_029824_.jpg'); ;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/*.container-fluid{
+  background:url('http://www.claracav.eu/lightstudio/wp-content/uploads/2014/06/177994451_2815684ffd_o.jpg');
+background-size: 100%;
+}*/
+.btn, .button {
   font-family: 'Rubik', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -97,6 +110,9 @@ a{
   align: right;
   padding: 15px 20px;
  border-radius: 25%;
+}
+.submit{
+  padding: 15px;
 }
 .avatar {
   border: 5px solid red;
@@ -108,4 +124,7 @@ div{
   font-family: 'Rubik', Helvetica, Arial, sans-serif;
   margin-left: 25px auto;
   color: black
+}
+.form-group{
+  color:black;
 }
