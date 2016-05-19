@@ -9,7 +9,6 @@ $(document).ready(function() {
       var kraveState = $('#state').text();
       var kraveZip = $('#zip').text();
       var address = kraveCity + ", " + kraveState + " " + kraveZip;
-            $('#nameField').val(name);
 
 // Render Map
       window.initMap = function() {
@@ -86,19 +85,53 @@ $(document).ready(function() {
             label1 = results[i].name + ' - ' + 'Rating: ' + results[i].rating;
             }
             if (results[i].price_level === undefined) {
-            label2 = results[i].vicinity + ' - ' + 'Price Level: ' + notApplicable;
+            label2 = 'Price Level: ' + notApplicable;
             }
             else {
-            label2 = results[i].vicinity + ' - ' + 'Price Level: ' + results[i].price_level;
+            label2 = 'Price Level: ' + results[i].price_level;
             }
             //let label = results[i].name + ' (' + results[i].place_id + ')';
-            div.append($('<p id="label1"></p>').text(label1));
-            div.append($('<p id="label2"></p>').text(label2));
             var url = '/kravings/' + kraveId + '/info/' + results[i].place_id;
-            div.append($('<a></a>').attr('href', url).html('Info'));
-            div.append('<hr/>')
+
+            div.append($('<a id="label1" href="' + url + '"></a>').text(label1));
+            div.append($('<p id="label2"></p>').text(results[i].vicinity));
+            div.append($('<p id="label3"></p>').text(label2));
+
+            // var url = '/kravings/' + kraveId + '/info/' + results[i].place_id;
+            $('#label1').attr('href', url);
             placesElement.append(div);
         }
       }
+
+      // // Render list of places based on address
+      // function getPlace(results) {
+      //   var placesElement = $('#places');
+      //   var notApplicable = 'N/A';
+      //   for (var i = 0; i < results.length; i++) {
+      //       let label1;
+      //       let label2;
+      //       let div = $('<div style="margin-top: 20px"></div>');
+      //       if (results[i].rating === undefined) {
+      //       label1 = results[i].name + ' - ' + 'Rating: ' + notApplicable;
+      //       }
+      //       else {
+      //       label1 = results[i].name + ' - ' + 'Rating: ' + results[i].rating;
+      //       }
+      //       if (results[i].price_level === undefined) {
+      //       label2 = results[i].vicinity + ' - ' + 'Price Level: ' + notApplicable;
+      //       }
+      //       else {
+      //       label2 = results[i].vicinity + ' - ' + 'Price Level: ' + results[i].price_level;
+      //       }
+      //       //let label = results[i].name + ' (' + results[i].place_id + ')';
+      //       div.append($('<p id="label1"></p>').text(label1));
+      //       div.append($('<p id="label2"></p>').text(label2));
+      //       var url = '/kravings/' + kraveId + '/info/' + results[i].place_id;
+      //       div.append($('<a></a>').attr('href', url).html('Info'));
+      //       div.append('<hr/>')
+      //       placesElement.append(div);
+      //   }
+      // }
+
 
 });

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/head %>
+  <title>Place searches</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        width: 500px;
+        height: 500px;
+        float: right;
+      }
+      #places {
+        width: 400px;
+        float: left;
+      }
+    </style>
+  <script type="text/javascript" src="/public/js/jquery.js"></script>
+
+  <script type="text/javascript" src="/public/js/javascript.js"></script>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include partials/header %>
+  </header>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer></script>
+
+  <main>
+   <div class="wrapper">
+    <div class="row">
+    <div id = "location" class = "col-lg-5">
+      <div>
+      <p><b>Kraving: </b><span id="name"></span></p>
+      <p><b>City: </b><span id="city"></span></p>
+      <p><b>State: </b><span id="state"></span></p>
+      <p><b>Zip Code: </b><span id="zip"></span></p>
+      </div>
+      <br>
+
+      <div id="places">Places:<br/></div>
+
+    </div>
+
+    <div id="map" class = "col-lg-6"></div>
+    </div>
+
+      <div class="row-btn">
+    <div class="col-md-8 col-md-offset-1">
+
+    <a href="/kravings/" class="btn btn-primary">Back</a>
+    </div>
+    </div>
+  </div>
+
+</main>
+
+  <footer>
+    <% include partials/footer %>
+  </footer>
+</body>
+</html>
