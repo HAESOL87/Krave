@@ -51,4 +51,18 @@ $(document).ready(function() {
       $('#placeIDField').val(placeID);
     };
 
+    getFormattedTime = function (fourDigitTime) {
+    // make sure add radix
+      var hours24 = parseInt(fourDigitTime.substring(0, 2),10);
+      var hours = ((hours24 + 11) % 12) + 1;
+      var amPm = hours24 > 11 ? 'pm' : 'am';
+      var minutes = fourDigitTime.substring(2);
+
+    return hours + ':' + minutes + amPm;
+    };
+      // find all spans and replace their content
+      $('#hours').html(function( i, oldHtml){
+         return getFormattedTime(oldHtml);
+    })
+
 });
