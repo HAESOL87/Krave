@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel='stylesheet' href='/stylesheets/modaltest2.css'/>
 <head>
   <% include ../partials/head %>
+
+    <script type="text/javascript" src="/js/jquery.js"></script>
+
+    <script type="text/javascript" src="/js/script2.js"></script>
+
 </head>
 
 <body class="container-fluid">
@@ -26,12 +32,31 @@
       <% }) %>
     </div>
 
-    <a href="/kravings" class="btn btn-primary">Back</a>
+    <div><a href="/kravings" class="btn btn-primary">Back</a></div>
+
+<div id="popup" class="modal-box">
+  <header>
+    <a href="#" class="js-modal-close close">×</a>
+    <h3><a href="http://www.jqueryscript.net/tags.php?/Modal/">Modal</a> Title</h3>
+  </header>
+  <div class="modal-body">
+    <p>Modal Body</p>
+  </div>
+  <footer>
+    <a href="#" class="js-modal-close">Close Button</a>
+  </footer>
+</div>
+
 
  </main>
+
+ <a class="js-open-modal" href="#" data-modal-id="popup"> Click me </a>
 
   <footer>
     <% include ../partials/footer %>
   </footer>
 </body>
+
+
+
 </html>
