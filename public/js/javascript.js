@@ -11,6 +11,7 @@ $(document).ready(function() {
       var address = kraveCity + ", " + kraveState + " " + kraveZip;
             $('#nameField').val(name);
 
+// Render Map
       window.initMap = function() {
         getCoordinates(address, createMap);
       };
@@ -70,6 +71,7 @@ $(document).ready(function() {
         });
       }
 
+// Render list of places based on address
       function getPlace(results) {
         var placesElement = $('#places');
         var notApplicable = 'N/A';
@@ -98,4 +100,5 @@ $(document).ready(function() {
             placesElement.append(div);
         }
       }
+
 });
