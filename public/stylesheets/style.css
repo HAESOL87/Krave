@@ -17,7 +17,7 @@ html{
 body {
   font-family: 'Rubik', sans-serif, 'Fjalla One', 'Merriweather', serif;
   font color: black ;
-  background-color: white;
+  background-color: gray;
   padding: 30px;
   text-transform: uppercase;
   /*background-image: url("http://imgur.com/eGlgzMn");*/
@@ -65,7 +65,7 @@ h2 {
 align: center;
 }*/
 #logo {
-  width: 210px;
+  width: 10px;
   height: 210px;
   position: relative;
   margin-left: 3.5%;
