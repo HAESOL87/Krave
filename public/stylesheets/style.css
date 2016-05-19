@@ -16,8 +16,10 @@ html{
 }
 body {
   font-family: 'Rubik', sans-serif, 'Fjalla One', 'Merriweather', serif;
-  font color: white ;
-  background-color: blue ;
+  font color: black ;
+  background-color: white;
+  padding: 30px;
+  text-transform: uppercase;
   /*background-image: url("http://imgur.com/eGlgzMn");*/
   /*background-size: 100%;*/
 }
@@ -43,15 +45,15 @@ h2 {
   font-family: 'Rubik', sans-serif 'Fjalla One';
   font-size: 1.8em;
   font-weight: 600;
-  text-align: center;
+  align: center;
 }
-img {
+/*.logo {
   width: 110px;
   height: 110px;
   position: relative;
   margin-left: 3.5%;
-  /*margin-left: 45.8%;*/
-  margin-top: 6px;
+  margin-left: 45.8%;
+    margin-top: 6px;
   z-index: 1;
   border-color: red;
   background-color: transparent;
@@ -60,6 +62,39 @@ img {
   animation-duration: 2s;
   animation-transition: ease-out;
   box-shadow: 0 4px 5px 0 red, 0 1px 10px 0 red, 0 2px 4px 0px red;
+align: center;
+}*/
+#logo {
+  width: 210px;
+  height: 210px;
+  position: relative;
+  margin-left: 3.5%;
+  /*margin-left: 45.8%;*/
+    margin-top: 6px;
+  z-index: 1;
+  border-color: red;
+  background-color: transparent;
+  border-radius: 90%;
+  animation-name: image;
+  animation-duration: 2s;
+  animation-transition: ease-out;
+box-shadow: inset 0 0 0 16px red, 0 1px 2px red;
+}
+#logo2 {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  margin-left: 3.5%;
+  /*margin-left: 45.8%;*/
+    margin-top: 6px;
+  z-index: 1;
+  border-color: red;
+  background-color: transparent;
+  border-radius: 100%;
+  animation-name: image;
+  animation-duration: 2s;
+  animation-transition: ease-out;
+box-shadow: inset 0 0 0 16px red, 0 1px 2px red;
 
 }
 
@@ -67,39 +102,47 @@ img {
   max-width: 125px;
   margin: 0 auto;
   text-align: center;
-
+text-transform: uppercase;
 }
 
-.jumbotron , .container-fluid {
+.jumbotron {
   padding-top: 20px;
   padding-bottom: 20px;
   margin-bottom: 30px;
   background-color: transparent;
-
+  text-transform: uppercase;
   border-radius: 25%;
+  opacity: .9;
+  font-size: 21px;
+  font-weight: 200;
+  color:black;
+  opacity: .7;
+  border-radius: 25%;
+  text-align: center;
 
 }
 /*.jumbotron h1,
 .jumbotron .h1 {
   color: inherit;
 }*/
-.jumbotron p {
+/*.jumbotron p {
   margin-bottom: 15px;
   font-size: 21px;
   font-weight: 200;
-  opacity: .8;
+  color:white;
+  opacity: .3;
   border-radius: 25%;
-}
-.jumbotron > hr {
+  text-align: center;
+}*/
+/*.jumbotron > hr {
   border-top-color: #3333;
   opacity: .8;
-}
-.container .jumbotron,
-.jumbotron {
-  border-radius: 9px;
+}*/
+.container {
+  border-radius: 15px;
   padding-left: 15px;
   padding-right: 15px;
-  opacity: .9;
+  opacity: .8;
 }
 .thumbnail {
   display: block;
@@ -131,15 +174,17 @@ a.thumbnail.active {
 .btn:focus, .btn:active:focus, .btn.active:focus {
     outline: none;
 }
-.form-control {
+input{
   border-radius: 3px;
 }
-.form-control:focus {
+input:focus {
   border-color: #999999;
   outline: 0 none;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
 }
-
+p{
+  align:center;
+}
 label.error {
   color: #f25454;
   display: block;
@@ -152,10 +197,13 @@ label.error {
   text-transform: uppercase;
   font-weight: 700;
   border: 2px none;
-  border-radius: 25%;
-  padding: 12px 20px;
+ align: right;
+  border-radius: 50%;
+  padding: 15px 20px;
   -webkit-transition: all 0.25s ease 0s;
     transition: all 0.25s ease 0s;
+    border-radius: 25%;
+
 }
 .btn-lg {
   font-size: 16px;
@@ -199,7 +247,7 @@ label.error {
   border-radius: 3px;
 }
 /* Style The Dropdown Button */
-.dropbtn {
+/*.dropbtn {
     background-color: white;
     color: red;
     padding: 16px;
@@ -208,16 +256,18 @@ label.error {
     cursor: pointer;
     border-radius: 25%;
     float: right;
+    text-transform: uppercase;
 }
-
+*/
 /* The container <div> - needed to position the dropdown content */
-.dropdown {
+.navbar {
     float: right;
     display: inline-block;
     background-color: transparent;
     color: black;
     border: 2px solid #555555;
-    border-radius: 25%
+    border-radius: 25%;
+    text-transform: uppercase;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -226,6 +276,7 @@ label.error {
     background-color: transparent;
     min-width: 160px;
     float: right;
+    text-transform: uppercase;
 }
 
 /* Links inside the dropdown */
@@ -233,7 +284,6 @@ label.error {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
-    display: inline-block;
 
 }
 
@@ -267,7 +317,7 @@ label.error {
   float: right;
   align: left;
 }*/
-.footer, .text-center{
+.text-center{
   padding: 20px 16px;
   align: center;
   font-size: 15px;

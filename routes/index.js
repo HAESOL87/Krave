@@ -52,5 +52,4 @@ router.get('/about', function(req, res, next) {
   res.render('about.ejs', { message: req.flash()} );
 });
 
-
 module.exports = router;
