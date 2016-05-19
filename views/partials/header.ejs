@@ -1,34 +1,14 @@
-<link rel='stylesheet' href='/stylesheets/style.css' />
 
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">
-      </a>
-    </div>
 
-<!--     <ul class="nav navbar-nav navbar-left">
-      <li><a href="/">Home</a></li>
-      <% if (currentUser) { %>
-        <li><a href="/kravings">KRAVINGs</a></li>
-        <li><a href="/favs">Favorite Places</a></li>
-      <% } %>
-      <li><a href="/about">About</a></li> -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/journal/bootstrap.min.css">
 
-    <ul class="nav navbar-nav">
-      <div class="dropdown">
-        <button class="dropbtn">Menu</button>
-        <div class="dropdown-content">
-          <a href="/">Home</a>
-          <a href="/kravings">KRAVs</a>
-          <a href="/favs">FAVs</a>
-
-          <<a href="/about">About</a>
-        </div>
-      </div>
-    </ul>
-
-    <ul class="nav navbar-nav navbar-right">
+<nav>
+<div class="nav">
+    <ul class="navbar-nav navbar-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="/kravings">KRAVs</a></li>
+        <li><a href="/favs">FAVs</a></li>
+        <li><a href="/about">About</a></li>
       <% if (currentUser) { %>
         <li><a href="#"><%= currentUser.local.email %></a></li>
         <li><a href="/logout">Logout</a></li>
