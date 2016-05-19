@@ -39,16 +39,25 @@ $(document).ready(function() {
       var notApplicable = 'N/A';
       var d = new Date();
       var n = d.getDay();
-      var openTime = getFormattedTime(hours.periods[n].open.time);
-      var closeTime = getFormattedTime(hours.periods[n].close.time);
 
+      let phoneText;
+      if (phone === undefined) {
+        phoneText = 'Phone: ' + notApplicable;
+      }
+      else {
+        phoneText = 'Phone: ' + phone;
+      }
 
       let hoursText;
       if(hours === undefined) {
         hoursText = 'Hours: ' + notApplicable;
       }
+      else if(hours.open_now === false) {
+        hoursText = 'Hours: Currently closed';
+      }
       else {
-
+        var openTime = getFormattedTime(hours.periods[n].open.time);
+        var closeTime = getFormattedTime(hours.periods[n].close.time);
         var open_to_close =  openTime + ' - ' + closeTime;
         hoursText = 'Hours: ' + open_to_close;
       }
@@ -63,7 +72,7 @@ $(document).ready(function() {
 
       $('#name').text('Name: ' + name);
       $('#address').text('Address: ' + address);
-      $('#phone').text('Phone: ' + phone);
+      $('#phone').text(phoneText);
       $('#hours').text(hoursText);
       $('#website').text(websiteText);
 
@@ -71,8 +80,8 @@ $(document).ready(function() {
       $('#placeIDField').val(placeID);
     };
 
-    getFormattedTime = function (fourDigitTime) {
-    // make sure add radix
+    // Change time format
+    function getFormattedTime(fourDigitTime) {
       var hours24 = parseInt(fourDigitTime.substring(0, 2),10);
       var hours = ((hours24 + 11) % 12) + 1;
       var amPm = hours24 > 11 ? 'pm' : 'am';

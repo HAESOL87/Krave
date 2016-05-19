@@ -99,6 +99,7 @@ $(document).ready(function() {
 
             // var url = '/kravings/' + kraveId + '/info/' + results[i].place_id;
             $('#label1').attr('href', url);
+
             placesElement.append(div);
         }
       }
