@@ -96,7 +96,7 @@ $(document).ready(function() {
             div.append($('<p id="label2"></p>').text(label2));
             var url = '/kravings/' + kraveId + '/info/' + results[i].place_id;
             div.append($('<a></a>').attr('href', url).html('Info'));
-            div.append('<hr/>')
+            div.append('<br />')
             placesElement.append(div);
         }
       }
