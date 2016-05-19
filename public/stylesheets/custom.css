@@ -12,27 +12,38 @@ body {
   background-size:100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  font color: white;
 }
 h2 {
   font-family: 'Rubik', sans-serif;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 700;
   align: center;
-    margin: 0px auto;
-
+  margin: 0px auto;
+ text-transform: uppercase;
+  opacity: 100%;
+  padding: 10px;
+  font-stroke: 1px black;
+   color: red;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
 }
 
 .jumbo {
   padding-top: 20px;
-  padding-bottom: 10px ;
-  margin-bottom: 30px auto;
-/*  opacity: .7;
-/**/  /*color: black;*/
-  text-transform: uppercase;
+
+  margin-bottom: 5px auto;
+  color: black;
   border-radius: 20px;
   text-align: center;
-background:url('http://images6.fanpop.com/image/photos/36400000/msyugioh123-image-msyugioh123-36431377-1920-1200.jpg');
-background-size: 100%;
+  background:url('https://gigaom.com/wp-content/uploads/sites/1/2012/09/shutterstock_92522029-640x506.jpg');
+  background-size: 100%;
+/*  background-repeat: no-repeat;*/
+  /*filter: blur(20px);*/
 }
 ul{
 list-style-type: none;
@@ -43,6 +54,7 @@ a{
   padding:20px;
   margin-right:0px auto;
   align: left;
+  color: red;
 }
 .nav{
   float:right;
@@ -93,10 +105,12 @@ a{
 
 }
 .container-fluid{
-  background: url('http://www.zastavki.com/pictures/2560x1600/2011/Animals_Beasts_Cheetah_in_black-white_029824_.jpg'); ;
+  background: url('http://i.imgur.com/6lIrCPC.jpg'); ;
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+}
 }
 /*.container-fluid{
   background:url('http://www.claracav.eu/lightstudio/wp-content/uploads/2014/06/177994451_2815684ffd_o.jpg');
@@ -126,5 +140,46 @@ div{
   color: black
 }
 .form-group{
-  color:black;
+  color: white;
+  padding: 10px;
+  font-stroke: 1px black;
+   color: white;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+.signup{
+  font-size: 20px;
+  font color: red;
+}
+p{
+  color: white;
+  padding: 10px;
+  font-stroke: 1px black;
+   color: white;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+.navbar-nav{
+border: 2px;
+}
+label{
+  float:left;
+
+  padding: 10px;
+  font-stroke: 1px black;
+   color: white;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
 }

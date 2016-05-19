@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <a href="/kravings/" ><img id="logo" src="http://i.imgur.com/Zz3Uc8N.png?1"></a>
+
   <% include ../partials/head %>
+  <% include ../partials/header %>
   <title>Place searches</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -9,7 +12,7 @@
       html, body {
         height: 100%;
         margin: 0;
-        padding: 0;
+        padding: 20px;
       }
       #map {
         width: 600px;
@@ -24,7 +27,7 @@
 
 <body class="container-fluid">
   <header>
-    <% include ../partials/header %>
+
   </header>
     <p><b>Kraving: </b><span id="name"><%= kraving.name %></span></p>
     <p><b>City: </b><span id="city"><%= kraving.city %></span></p>
