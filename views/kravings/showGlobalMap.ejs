@@ -3,22 +3,21 @@
 <head>
 
   <% include ../partials/head %>
-      <% include ../partials/header %>
+    <% include ../partials/header %>
+    <a href="/kravings/" ><img id="logo2" src="http://i.imgur.com/Zz3Uc8N.png?1"></a>
+<script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/javascript.js"></script>
 
-        <a href="/kravings/" ><img id="logo2" src="http://i.imgur.com/Zz3Uc8N.png?1"></a>
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
   <title>Place searches</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
       html, body {
         height: 100%;
         margin: 0;
         padding: 20px;
-      }
-      .nav {
-        width:1200px;
-        height: 100px;
       }
       #map {
         width: 635px;
@@ -56,16 +55,7 @@
         float: left;
       }
     </style>
-  <script type="text/javascript" src="/js/jquery.js"></script>
-
-  <script type="text/javascript" src="/js/javascript.js"></script>
-
-
-
-<body class="container-fluid">
   <header>
-
-    <header>
   </header>
 
 </head>
@@ -84,7 +74,7 @@
             <p><b>Kraving: </b><span id="name"><%= kraving.name %></span></p>
             <p><span id="city"><%= kraving.city %></span> , <span id="state"><%= kraving.state %></span> <span id="zip"><%= kraving.zip %> </span></p>
           </div>
-          <h4>Places:</h4>
+          <h4>Places</h4>
           <div id="places"></div>
 
           <div id="button">

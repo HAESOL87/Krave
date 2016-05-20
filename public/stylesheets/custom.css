@@ -256,7 +256,7 @@ p{
 .wrapper {
   height:100%;
   position:relative;
-    margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto -155px;  the bottom margin is the negative value of the footer's height
 
 }
 
