@@ -7,22 +7,35 @@
       <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
-          .nav {
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 20px;
+      }
+      .nav {
         width:1200px;
         height: 100px;
-
       }
       h4 {
         width: 500px;
       }
       #map {
-        width: 500px;
-        height: 450px;
+        width: 635px;
+        height: 480px;
         float: right;
       }
       #places {
         width: 500px;
-        height: 350px;
+        height: 250px;
+        float: left;
+      }
+       #info{
+        width: 500px;
+        height: 100px;
+      }
+      #form {
+        width:500px;
+        margin:0;
         float: left;
       }
       #main {
@@ -33,6 +46,10 @@
       #location {
         padding: 0;
       }
+/*      #showjumbo {
+        width: 500px;
+        height: 500px;
+      }*/
     </style>
 
     <script type="text/javascript" src="/js/jquery.js"></script>
@@ -51,7 +68,6 @@
 
 <body class="container-fluid">
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer></script>
 
 <main id = "main">
 
@@ -59,37 +75,40 @@
 
       <div class="row">
         <div id = "location" class = "col-lg-5">
-          <div>
-            <p><b>SHOW Kraving: </b><span id="showK"><%= kraving.name %></span></p>
-          </div>
 
-          <h4>Places:</h4>
-          <div id="places">
-            <h4 id ="name">Name:</h4>
-            <h4 id ="address">Address:</h4>
-            <h4 id ="phone">Phone:</h4>
-            <h4 id ="hours">Hours:</h4>
-            <h4 id ="website">Website:</h4>
-          </div>
+            <div id = "info">
+              <p><b>SHOW Kraving: </b><span id="showK"><%= kraving.name %></span></p>
+            </div>
 
-          <div id="map" class = "col-lg-6"></div>
+            <h4>Places:</h4>
+            <div id="places">
+              <h4 id ="name">Name:</h4>
+              <h4 id ="address">Address:</h4>
+              <h4 id ="phone">Phone:</h4>
+              <h4 id ="hours">Hours:</h4>
+              <h4 id ="website">Website:</h4>
+            </div>
+
+
+          <form id= "form" class="Fav" action="/favs" method="post">
+            <a href="/kravings/<%= kraving._id %>" class="btn btn-primary">Back</a>
+            <a href="/kravings/" class="btn btn-primary">HOME</a>
+
+
+            <input type="hidden" name="kravingName" id="kravingField" value="<%= kraving.name%>">
+            <input type="hidden" name="placeName" id="placeNameField">
+            <input type="hidden" name="placeID" id="placeIDField">
+
+
+            <button id="hello" type="submit" class="btn btn-success">Save</button>
+          </form>
         </div>
+
+        <div id="map" class = "col-lg-6"></div>
       </div>
-
-    <form class="Fav" action="/favs" method="post">
-      <a href="/kravings/<%= kraving._id %>" class="btn btn-primary">Back</a>
-      <a href="/kravings/" class="btn btn-primary">HOME</a>
-
-
-      <input type="hidden" name="kravingName" id="kravingField" value="<%= kraving.name%>">
-      <input type="hidden" name="placeName" id="placeNameField">
-      <input type="hidden" name="placeID" id="placeIDField">
-
-
-      <button id="hello" type="submit" class="btn btn-success">Save</button>
-    </form>
-
   </div>
+
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer></script>
 
  </main>
 

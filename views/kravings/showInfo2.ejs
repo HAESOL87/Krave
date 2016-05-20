@@ -3,34 +3,69 @@
 <head>
   <% include ../partials/head %>
     <style>
-   #map {
-      width: 500px;
-      height: 400px;
-      background-color: #CCC;
-      float: right;
-    }
+     html, body {
+        height: 100%;
+        margin: 0;
+        padding: 20px;
+      }
+      .nav {
+        width:1200px;
+        height: 100px;
+      }
+      h4 {
+        width: 500px;
+      }
+      #map {
+        width: 635px;
+        height: 480px;
+        float: right;
+      }
+      #places {
+        width: 500px;
+        height: 250px;
+        float: left;
+      }
+       #info{
+        width: 500px;
+        height: 100px;
+      }
+      #form {
+        width:500px;
+        margin:0;
+        float: left;
+      }
+      #main {
+      width: 1200px;
+      height: 800px;
+      position: relative;
+      }
+      #location {
+        p
     </style>
 
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/script2.js"></script>
 
-</head>
-
-<body class="container-fluid">
-  <header>
+      <header>
     <% include ../partials/header %>
   </header>
 
-  <main>
+</head>
+
+<body class="container-fluid">
+
+  <main id = "main">
+
+  <div class="wrapper">
+
+      <div class="row">
+        <div id = "location" class = "col-lg-5">
 
     <div>
       <h3>Fav Kravs</h3>
-
     </div>
 
-    <div id="map"></div>
-
-     <div>
+     <div id="places">
       <h4 id ="kraving">Kraving: <%=favorite.kravingName %></h4>
       <h4 id ="name">Name:</h4>
       <h4 id ="address">Address:</h4>
@@ -39,13 +74,18 @@
       <h4 id ="website">Website:</h4>
     </div>
 
+          <a href="/favs" class="btn btn-primary">Back</a>
+      <a href="/kravings" class="btn btn-primary">HOME</a>
+  </div>
+    <div id="map"></div>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer>
 
 
     </script>
-
-      <a href="/favs" class="btn btn-primary">Back</a>
-      <a href="/kravings" class="btn btn-primary">HOME</a>
+</div>
+</div>
+</div>
 
  </main>
 

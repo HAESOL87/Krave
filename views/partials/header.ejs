@@ -5,11 +5,12 @@
 <nav>
 <div class="nav">
     <ul class="navbar-nav navbar-right">
-        <li><a href="/">Home</a></li>
+        <li><a href="#">Home</a></li>
+        <% if (currentUser) { %>
         <li><a href="/kravings">KRAVs</a></li>
         <li><a href="/favs">FAVs</a></li>
+        <% } %>
         <li><a href="/about">About</a></li>
-        <li><a href="/test">Test</a></li>
       <% if (currentUser) { %>
         <li><a href="#"><%= currentUser.local.email %></a></li>
         <li><a href="/logout">Logout</a></li>
