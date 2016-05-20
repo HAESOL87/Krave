@@ -20,6 +20,7 @@ $(document).ready(function() {
               position: place.geometry.location
             });
 
+
             setPlaceInfoFromMap(place.place_id, place.name, place.formatted_address, place.formatted_phone_number, place.opening_hours, place.website);
 
             google.maps.event.addListener(marker, 'click', function() {

@@ -5,7 +5,7 @@ var passport = require('passport');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  res.render('index', { title: 'Express', message: req.flash() });  // add the message
+  res.render('index', { title: 'Kravings', message: req.flash() });  // add the message
 });
 
 // GET /signup
@@ -51,9 +51,5 @@ router.get('/about', function(req, res, next) {
   res.render('about.ejs', { message: req.flash()} );
 });
 
-// GET /about
-router.get('/test', function(req, res, next) {
-  res.render('showTest.ejs', { message: req.flash()} );
-});
 
 module.exports = router;

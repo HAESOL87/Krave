@@ -217,12 +217,12 @@ background-size: 100%;
   display: inline-block;
 }
 
-div{
+/*div{
   font-family: 'Rubik', Helvetica, Arial, sans-serif;
   color: black;
   padding: 5px;
   margin: 5px;
-}
+}*/
 .form-group{
   color: white;
   padding: 10px;
