@@ -55,37 +55,36 @@
 
 <body class="container-fluid">
 
+ <div class="wrapper">
 
-  <div class="wrapper">
   <main id = "main">
+
 
       <div class="row">
         <div id = "location" class = "col-lg-5">
 
-    <div>
-      <h3>Fav Kravs</h3>
-    </div>
+        <div>
+        <h3>Fav Kravs</h3>
+      </div>
 
-     <div id="places">
-      <h4 id ="kraving">Kraving: <%=favorite.kravingName %></h4>
-      <h4 id ="name">Name:</h4>
-      <h4 id ="address">Address:</h4>
-      <h4 id ="phone">Phone:</h4>
-      <h4 id ="hours">Hours:</h4>
-      <h4 id ="website">Website:</h4>
-    </div>
+       <div id="places">
+        <h4 id ="kraving">Kraving: <%=favorite.kravingName %></h4>
+        <h4 id ="name">Name:</h4>
+        <h4 id ="address">Address:</h4>
+        <h4 id ="phone">Phone:</h4>
+        <h4 id ="hours">Hours:</h4>
+        <h4 id ="website">Website:</h4>
+      </div>
 
           <a href="/favs" class="btn btn-primary">Back</a>
       <a href="/kravings" class="btn btn-primary">HOME</a>
-  </div>
+    </div>
+
     <div id="map"></div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer>
-
-
     </script>
 </div>
-
 
  </main>
 </div>
@@ -94,6 +93,8 @@
     <footer class="copyright">
       <% include ../partials/footer %>
     </footer>
+  </div>
+
   </div>
 
   <script type="text/javascript">

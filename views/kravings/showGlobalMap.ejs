@@ -8,6 +8,7 @@
 <script type="text/javascript" src="/js/jquery.js"></script>
   <script type="text/javascript" src="/js/javascript.js"></script>
 
+
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
   <title>Place searches</title>
@@ -67,6 +68,7 @@
   <main id = "main">
 
       <div class="row">
+
         <div id = "location" class = "col-lg-5">
           <div id = "info">
             <p><b>Kraving: </b><span id="name"><%= kraving.name %></span></p>
@@ -75,16 +77,14 @@
           <h4>Places</h4>
           <div id="places"></div>
 
-        <div id="button">
-        <a href="/kravings/" class="btn btn-primary">Back</a>
-
-         </div>
-
+          <div id="button">
+          <a href="/kravings/" class="btn btn-primary">Back</a>
+          </div>
         </div>
 
         <div id="map" class = "col-lg-6"></div>
+
       </div>
-    </div>
 
   </main>
 
@@ -93,6 +93,7 @@
           <% include ../partials/footer %>
         </footer>
       </div>
+
     </div>
   </body>
 </html>
