@@ -6,22 +6,25 @@
 
 body {
   padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-  background:url('http://www.claracav.eu/lightstudio/wp-content/uploads/2014/06/177994451_2815684ffd_o.jpg');
+  /*background:url('http://applewallpapers.net/wallpapers/black_and_white-1366x768.jpg');*/
   background-size:100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
 display: inline-block;
 }
-p{
+h3{
   color: white;
   font-stroke: 1px black;
-   color: white;
+
    text-shadow:
-       3px 3px 0 #000,
-     -1px -1px 0 #000,
-      1px -1px 0 #000,
+       3px 3px 0 #fff,
+     -1px -1px 0 #fff,
+      1px -1px 0 #fff,
       -1px 1px 0 #000,
        1px 1px 0 #000;
+}
+.nav{
+  float: left;
 }
 
 .img-center {
@@ -35,4 +38,13 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
+}
+.container-fluid2{
+  background: url('http://applewallpapers.net/wallpapers/black_and_white-1366x768.jpg'); ;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+div{
+  display: inline-table;
 }
