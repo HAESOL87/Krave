@@ -88,7 +88,6 @@ $(document).ready(function() {
       var minutes = fourDigitTime.substring(2);
 
     return hours + ':' + minutes + amPm;
->>>>>>> f13022f3b7acf92997fde12619b265cfb27aa172
     };
 
 });
