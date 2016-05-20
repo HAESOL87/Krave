@@ -4,7 +4,7 @@
 body {
   font-family: 'Rubik', sans-serif, 'Fjalla One', 'Merriweather', serif;
   background-color: black;
-  padding: 30px;
+  padding: 10px;
   text-transform: uppercase;
   margin: 0px auto;
   /*background-image: url("http://imgur.com/eGlgzMn");*/
@@ -19,10 +19,9 @@ h2 {
   font-family: 'Rubik', sans-serif;
   font-size: 30px;
   font-weight: 700;
-  align: center;
+  align: left;
   margin: 0px auto;
  text-transform: uppercase;
-  opacity: 100%;
   padding: 10px;
   font-stroke: 1px black;
    color: red;
@@ -36,7 +35,6 @@ h2 {
 
 .jumbo {
   padding-top: 20px;
-
   margin-bottom: 5px auto;
   color: black;
   border-radius: 20px;
@@ -87,14 +85,42 @@ a{
 }
 
 .nav{
-  float: right;
-  padding: 5px;
-  margin: 5px;
+  float:right;
+  padding:20px;
+}
+.nav ul {
+  list-style: none;
+  background-color: black;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+}
+.nav a {
+  text-decoration: none;
+  color: red;
+  display: block;
+  transition: .3s background-color;
+}
+.nav a:hover {
+  background-color: white;
+  opacity: .7;
+}
+.nav a.active {
+  background-color: white;
+  color: black;
+  cursor: default;
 }
 
 #logo {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   position: relative;
   /*margin-left: 45.8%;*/
   margin-top: 6px;
@@ -105,7 +131,7 @@ a{
   animation-name: image;
   animation-duration: 2s;
   animation-transition: ease-out;
-/*box-shadow: inset 0 0 0 16px red, 0 1px 2px red;*/
+box-shadow: inset 0 0 0 16px red, 0 1px 2px red;
 }
 
 #logo2 {
@@ -122,7 +148,7 @@ a{
   animation-name: image;
   animation-duration: 2s;
   animation-transition: ease-out;
-/*box-shadow: inset 0 0 0 16px red, 0 1px 2px red;*/
+box-shadow: inset 0 0 0 16px red, 0 1px 2px red;
 }
 
 /*input{
@@ -132,7 +158,7 @@ a{
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
 }
 */form{
-  align: center;
+  align: left;
   color: black;
   max-width: 350px;
   margin: 0px auto;
@@ -154,7 +180,6 @@ a{
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
 }
 
 /*.container-fluid{
@@ -186,6 +211,11 @@ background-size: 100%;
   height: 250px;
   border-radius: 100%;
   }
+
+.content {
+  display: inline-block;
+}
+
 div{
   font-family: 'Rubik', Helvetica, Arial, sans-serif;
   color: black;
@@ -220,6 +250,7 @@ p{
       -1px 1px 0 #000,
        1px 1px 0 #000;
 }
+
 .navbar-nav{
 border: 2px;
 }
