@@ -58,6 +58,7 @@
   <script type="text/javascript" src="/js/javascript.js"></script>
 
 
+
 <body class="container-fluid">
   <header>
 
@@ -68,12 +69,11 @@
 </head>
 
 <body class="container-fluid">
+    <div class="wrapper">
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer></script>
 
   <main id = "main">
-
-    <div class="wrapper">
 
       <div class="row">
         <div id = "location" class = "col-lg-5">
@@ -95,14 +95,15 @@
       </div>
     </div>
 
-  </div>
+  </main>
 
- </main>
-
-  <footer>
-    <% include ../partials/footer %>
-  </footer>
-</body>
+      <div class="footer">
+        <footer class="copyright">
+          <% include ../partials/footer %>
+        </footer>
+      </div>
+    </div>
+  </body>
 </html>
 
 

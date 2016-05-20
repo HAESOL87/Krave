@@ -12,24 +12,27 @@
 </head>
 
 <body class="container-fluid">
-
-<img id="logo2" src="http://i.imgur.com/Zz3Uc8N.png?1">
- </div>
+<div class="wrapper">
+<div>
   <header>
   </header>
+  </div>
+<div>
+    <a href="/kravings/" ><img id="logo2" src="http://i.imgur.com/Zz3Uc8N.png?1"></a>
+</div>
 
   <main>
-    <div>
-      <h3>My KRAVINGs:</h3>
+    <h3>My KRAVINGs</h3>
+    <div class="jumbo2">
       <% kravings.forEach(function(kraving) { %>
         <h4>
             <a href="/kravings/<%= kraving._id %>">
-              <%= kraving.name %>
+              "<%= kraving.name %>"
             </a>
-            <form method="GET" action="/kravings/<%= kraving._id %>/edit">
+            <form class="index_buttons" method="GET" action="/kravings/<%= kraving._id %>/edit">
               <button type="submit" class="btn btn-xs btn-danger">Edit</button>
             </form>
-            <form method="POST" action="/kravings/<%= kraving._id %>?_method=DELETE">
+            <form class="index_buttons" method="POST" action="/kravings/<%= kraving._id %>?_method=DELETE">
               <button type="submit" class="btn btn-xs btn-danger">Delete</button>
             </form>
         </h4>
@@ -38,10 +41,11 @@
     <a href="/kravings/new" class="btn btn-primary">New</a><br />
 
   </main>
-  <div class="footer">
-  <footer>
-    <% include ../partials/footer %>
-  </footer>
+    <div class="footer">
+      <footer class="copyright">
+        <% include ../partials/footer %>
+      </footer>
+    </div>
   </div>
 </body>
 </html>
