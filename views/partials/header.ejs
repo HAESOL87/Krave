@@ -6,11 +6,9 @@
 <div class="nav">
     <ul class="navbar-nav navbar-right">
 
-        <li><a href="#">Home</a></li>
-        <% if (currentUser) { %>
+        <li><a href="/">Home</a></li>
         <li><a href="/kravings">KRAVs</a></li>
         <li><a href="/favs">FAVs</a></li>
-        <% } %>
         <li><a href="/about">About</a></li>
       <% if (currentUser) { %>
         <li><a href="#"><%= currentUser.local.email %></a></li>

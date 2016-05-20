@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <a href="/kravings/" ><img id="logo2" src="http://i.imgur.com/Zz3Uc8N.png?1"></a>
 
   <% include ../partials/head %>
+      <% include ../partials/header %>
+
+        <a href="/kravings/" ><img id="logo2" src="http://i.imgur.com/Zz3Uc8N.png?1"></a>
+
   <title>Place searches</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -63,7 +66,6 @@
   <header>
 
     <header>
-    <% include ../partials/header %>
   </header>
 
 </head>
@@ -76,6 +78,7 @@
   <main id = "main">
 
       <div class="row">
+
         <div id = "location" class = "col-lg-5">
           <div id = "info">
             <p><b>Kraving: </b><span id="name"><%= kraving.name %></span></p>
@@ -84,16 +87,14 @@
           <h4>Places:</h4>
           <div id="places"></div>
 
-        <div id="button">
-        <a href="/kravings/" class="btn btn-primary">Back</a>
-
-         </div>
-
+          <div id="button">
+          <a href="/kravings/" class="btn btn-primary">Back</a>
+          </div>
         </div>
 
         <div id="map" class = "col-lg-6"></div>
+
       </div>
-    </div>
 
   </main>
 
@@ -102,6 +103,7 @@
           <% include ../partials/footer %>
         </footer>
       </div>
+
     </div>
   </body>
 </html>
