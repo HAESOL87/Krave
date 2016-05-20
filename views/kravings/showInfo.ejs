@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <a href="/kravings/" ><img id="logo2" src="http://i.imgur.com/Zz3Uc8N.png?1"></a>
+
   <% include ../partials/head %>
+      <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
     <style>
-   #map {
-      width: 500px;
-      height: 400px;
-      background-color: #CCC;
-      float: right;
-    }
+          .nav {
+        width:1200px;
+        height: 100px;
+
+      }
+      h4 {
+        width: 500px;
+      }
+      #map {
+        width: 500px;
+        height: 450px;
+        float: right;
+      }
+      #places {
+        width: 500px;
+        height: 350px;
+        float: left;
+      }
+      #main {
+      width: 1200px;
+      height: 800px;
+      position: relative;
+      }
+      #location {
+        padding: 0;
+      }
     </style>
 
     <script type="text/javascript" src="/js/jquery.js"></script>
@@ -27,23 +51,30 @@
 
 <body class="container-fluid">
 
-  <main>
-
-    <div>
-      <h3>SHOW KRAVING: <span id="showK"><%= kraving.name %></span> </h3>
-    </div>
-
-    <div id="map"></div>
-
-     <div>
-      <h4 id ="name">Name:</h4>
-      <h4 id ="address">Address:</h4>
-      <h4 id ="phone">Phone:</h4>
-      <h4 id ="hours">Hours:</h4>
-      <h4 id ="website">Website:</h4>
-    </div>
-
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer></script>
+
+<main id = "main">
+
+    <div class="wrapper">
+
+      <div class="row">
+        <div id = "location" class = "col-lg-5">
+          <div>
+            <p><b>SHOW Kraving: </b><span id="showK"><%= kraving.name %></span></p>
+          </div>
+
+          <h4>Places:</h4>
+          <div id="places">
+            <h4 id ="name">Name:</h4>
+            <h4 id ="address">Address:</h4>
+            <h4 id ="phone">Phone:</h4>
+            <h4 id ="hours">Hours:</h4>
+            <h4 id ="website">Website:</h4>
+          </div>
+
+          <div id="map" class = "col-lg-6"></div>
+        </div>
+      </div>
 
     <form class="Fav" action="/favs" method="post">
       <a href="/kravings/<%= kraving._id %>" class="btn btn-primary">Back</a>
@@ -57,6 +88,8 @@
 
       <button id="hello" type="submit" class="btn btn-success">Save</button>
     </form>
+
+  </div>
 
  </main>
 
