@@ -6,41 +6,42 @@
    <link rel='stylesheet' href='/stylesheets/custom.css'/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body>
-<div class="wrapper">
-<div class="jumbo">
-    <!-- <h1><%= title %></h1> -->
-     <h2>Welcome to: </h2>
-<!-- <div class="logo" id="openlogo"> -->
-<img id="logo" src="http://i.imgur.com/Zz3Uc8N.png?1">
- <!-- </div> -->
- </br>
-    <h2>What are you Kraving?</h2>
-     <!-- <h2>What are you Kraving?</h2> -->
-<form method="post" action="/login">
-   <div class="form-group">
-      <label for="email">User Name:</label>
-      <input class="form-control" type="text" name="email" id="email">
-  </div>
-            <div class="form-group">
-              <label for="email">Password:</label>
-              <input class="form-control" type="password" name="password" id="password">
-            </div>
+  <body id= "index">
+    <div class="wrapper">
+    <div class="jumbo">
+        <!-- <h1><%= title %></h1> -->
+         <!-- <h2>Welcome to: </h2> -->
+    <!-- <div class="logo" id="openlogo"> -->
+    <img id="logo" src="http://i.imgur.com/Zz3Uc8N.png?1">
+     <!-- </div> -->
+     </br>
+        <h2>What are you Kraving?</h2>
+         <!-- <h2>What are you Kraving?</h2> -->
+        <form method="post" action="/login">
+           <div class="form-group">
+              <label for="email">User Name:</label>
+              <input class="form-control" type="text" name="email" id="email">
+          </div>
+                    <div class="form-group">
+                      <label for="email">Password:</label>
+                      <input class="form-control" type="password" name="password" id="password">
+                    </div>
 
-  <button type="submit">Log In</button>
-  </form>
-   <p>Want to satisfy your Kraving?</p>
-    <p>Dont have an account?</p>
-  <p>Create Your Account<a class="signup" href="/signup">Here</a></p>
+      <button type="submit">Log In</button>
+      </form>
+      <p>Dont have an account?<a class="signup" href="/signup">Here</a></p>
 
-  <div class="footer">
-    <footer class="copyright">
-      <% include ./partials/footer %>
-    </footer>
-  </div>
-  </div>
+      </div>
+
+      <div class="footer">
+        <footer class="copyright">
+            <p class="text-center">&copy; Copyright 2016 Krave .</p>
+        </footer>
+      </div>
+
+      </div>
   </body>
-  </div>
+
 </html>
 
 
