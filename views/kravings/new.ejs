@@ -3,10 +3,17 @@
 <head>
   <% include ../partials/head %>
   <% include ../partials/header %>
+
+  <style>
+  .footer{
+  position: relative;
+  }
+  </style>
+
 </head>
 
 <body class="container-fluid">
-  <main>
+  <main class="content">
     <h3>Watcha Kraving?</h3>
     <form class="kraving-form" action="/kravings" method="post">
       <% include _form %>

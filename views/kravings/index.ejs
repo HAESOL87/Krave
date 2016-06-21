@@ -8,18 +8,18 @@
 
   <script type="text/javascript" src="/js/jquery.js"></script>
 
+  <style>
+  .footer{
+  position: relative;
+  }
+  </style>
+
 </head>
 
 <body class="container-fluid">
 <div class="wrapper">
-<div>
-  <header>
-  </header>
-  </div>
-<div>
-</div>
 
-  <main>
+  <div class = "content">
     <h3>My KRAVINGs</h3>
     <div class="jumbo2">
       <% kravings.forEach(function(kraving) { %>
@@ -37,13 +37,14 @@
       <% }) %>
     </div>
     <a href="/kravings/new" class="btn btn-primary">New</a><br />
+  </div>
 
-  </main>
     <div class="footer">
       <footer class="copyright">
         <% include ../partials/footer %>
       </footer>
     </div>
-  </div>
+
+</div>
 </body>
 </html>
