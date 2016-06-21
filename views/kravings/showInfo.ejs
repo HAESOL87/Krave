@@ -23,15 +23,23 @@
         height: 480px;
         float: right;
       }
+
       #places {
         width: 500px;
-        height: 250px;
+        height: 270px;
         float: left;
-        font-size: 100px;
       }
-       #info{
+
+      #place, #name, #address, #phone, #hours, #website{
+       font-size: 23px;
+      }
+      #infoname {
+        font-size: 45px
+      }
+
+      #info{
         width: 500px;
-        height: 100px;
+        height: 80px;
       }
       #form {
         width:500px;
@@ -76,10 +84,10 @@
 
         <div id = "location" class = "col-lg-5">
             <div id = "info">
-              <h1><b>Kraving: </b><span id="showK"><%= kraving.name %></span></h1>
+              <h1 id = "infoname"><b>Kraving: </b><span id="showK"><%= kraving.name %></span></h1>
             </div>
 
-            <h4>Place:</h4>
+            <h4 id = "place">Place:</h4>
             <div id="places">
               <h4 id ="name">Name:</h4>
               <h4 id ="address">Address:</h4>
