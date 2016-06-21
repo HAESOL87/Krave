@@ -328,3 +328,8 @@ label.error {
   align: center;
   font-size: 15px;
 }
+footer {
+    padding-top: 50px;
+    float: left;
+    align: center;
+}

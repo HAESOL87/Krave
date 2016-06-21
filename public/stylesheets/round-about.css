@@ -23,6 +23,10 @@ h3{
       -1px 1px 0 #000,
        1px 1px 0 #000;
 }
+
+#about {
+  text-align: center;
+}
 .nav{
   float: right;
   padding:20px;
@@ -61,10 +65,14 @@ h3{
 	margin: 0 auto;
 }*/
 
+.content {
+  padding-bottom: 20px;
+}
+
 footer {
     padding-top: 50px;
-    float: right;
-   /* align: center;*/
+    float: left;
+    align: center;
 }
 /*.bg {
   position: fixed;
