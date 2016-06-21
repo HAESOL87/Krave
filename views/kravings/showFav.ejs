@@ -3,46 +3,39 @@
 
 <head>
   <% include ../partials/head %>
-    <% include ../partials/header %>
+  <% include ../partials/header %>
 
-    <a href="/kravings/" ><img id="logo2" src="http://i.imgur.com/Zz3Uc8N.png?1"></a>
+  <a href="/kravings/" ><img id="logo2" src="http://i.imgur.com/Zz3Uc8N.png?1"></a>
 <!-- <link rel='stylesheet' href='/stylesheets/modaltest2.css'/>
- -->    <script type="text/javascript" src="/js/jquery.js"></script>
-    <script type="text/javascript" src="/js/script2.js"></script>
+ -->
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/script2.js"></script>
 </head>
 
 <body class="container-fluid">
-    <div class="wrapper">
-
-  <header>
-  </header>
-
-  <main>
-    <h3>My FAVs</h3>
-    <div class="jumbo2">
-      <% favorites.forEach(function(favorite) { %>
+  <div class="wrapper">
+      <main>
+      <h3>My FAVs</h3>
+      <div class="jumbo2">
+       <% favorites.forEach(function(favorite) { %>
         <h4>
           <a href="/favs/<%= favorite._id %>"><%= favorite.name %></a>"<%= favorite.kravingName %>"
           <form class="index_buttons" method="POST" action="/favs/<%= favorite._id %>?_method=DELETE">
-
             <button type="submit" class="btn btn-xs btn-danger">Delete</button>
           </form>
-          </h4>
-      <% }) %>
-    </div>
+        </h4>
+        <% }) %>
+      </div>
+      <div><a href="/kravings" class="btn btn-primary">Kravings</a></div>
+      </main>
 
-    <div><a href="/kravings" class="btn btn-primary">Kravings</a></div>
+      <div class="footer">
+        <footer class="copyright">
+          <% include ../partials/footer %>
+        </footer>
+      </div>
 
-    </main>
-
-  <div class="footer">
-    <footer class="copyright">
-      <% include ../partials/footer %>
-    </footer>
-  </div>
   </div>
 </body>
-
-
 
 </html>

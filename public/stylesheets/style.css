@@ -7,6 +7,7 @@ a:hover, a:focus {
     color: #3333;
     text-decoration: none;
 }
+
 @import url(https://fonts.googleapis.com/css?family=Rubik:500,700);
 @import url(https://fonts.googleapis.com/css?family=Dosis:400,500,600,300|Neucha);
 @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
@@ -14,6 +15,7 @@ html{
   height: 100%;
   -webkit-font-smoothing: antialiased;
 }
+
 body {
   font-family: 'Rubik', sans-serif, 'Fjalla One', 'Merriweather', serif;
   font color: black ;
@@ -28,6 +30,7 @@ h3, h4, h5 {
   font-family: 'Rubik', sans-serif, 'Fjalla One';
   text-align: left;
 }
+
 h5 {
   text-align: center;
   font-size: 1.5em;
@@ -47,6 +50,7 @@ h2 {
   font-weight: 600;
   align: center;
 }
+
 /*.logo {
   width: 110px;
   height: 110px;
@@ -138,6 +142,7 @@ text-transform: uppercase;
   border-top-color: #3333;
   opacity: .8;
 }*/
+
 .container {
   border-radius: 15px;
   padding-left: 15px;
@@ -260,6 +265,7 @@ label.error {
 }
 */
 /* The container <div> - needed to position the dropdown content */
+
 .navbar {
     float: right;
     display: inline-block;
