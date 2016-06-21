@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
   <% include ../partials/head %>
-        <% include ../partials/header %>
-    <a href="/kravings/" ><img id="logo2" src="http://i.imgur.com/Zz3Uc8N.png?1"></a>
+  <% include ../partials/header %>
+  <a href="/kravings/" ><img id="logo2" src="http://i.imgur.com/Zz3Uc8N.png?1"></a>
 
-      <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 20px;
-      }
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <style>
+    html, body {
+/*        height: 100%;
+        margin: 0;*/
+        /*padding: 20px;*/
+    }
 
-      h4 {
+    h4 {
         width: 500px;
-      }
+    }
+
       #map {
         width: 635px;
         height: 480px;
@@ -26,6 +27,7 @@
         width: 500px;
         height: 250px;
         float: left;
+        font-size: 100px;
       }
        #info{
         width: 500px;
@@ -36,18 +38,26 @@
         margin:0;
         float: left;
       }
-      #main {
+/*      #main {
       width: 1200px;
       height: 800px;
       position: relative;
-      }
-      #location {
+      }*/
+/*      #location {
         padding: 0;
-      }
+      }*/
 /*      #showjumbo {
         width: 500px;
         height: 500px;
       }*/
+       #row1{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+      }
     </style>
 
     <script type="text/javascript" src="/js/jquery.js"></script>
@@ -57,20 +67,14 @@
       var currentPlaceId = "<%= currentPlaceId %>";
     </script>
 
-    <header>
-    </header>
-
-
 </head>
 
 <body class="container-fluid">
+  <div class="wrapper">
+    <!-- <main id = "main"> -->
+      <div class="row" id="row1">
 
- <div class="wrapper">
-<main id = "main">
-
-      <div class="row">
         <div id = "location" class = "col-lg-5">
-
             <div id = "info">
               <h1><b>Kraving: </b><span id="showK"><%= kraving.name %></span></h1>
             </div>
@@ -84,28 +88,24 @@
               <h4 id ="website">Website:</h4>
             </div>
 
+            <form id= "form" class="Fav" action="/favs" method="post">
+              <a href="/kravings/<%= kraving._id %>" class="btn btn-primary">Back</a>
+              <a href="/kravings/" class="btn btn-primary">HOME</a>
 
-          <form id= "form" class="Fav" action="/favs" method="post">
-            <a href="/kravings/<%= kraving._id %>" class="btn btn-primary">Back</a>
-            <a href="/kravings/" class="btn btn-primary">HOME</a>
+              <input type="hidden" name="kravingName" id="kravingField" value="<%= kraving.name%>">
+              <input type="hidden" name="placeName" id="placeNameField">
+              <input type="hidden" name="placeID" id="placeIDField">
 
-
-            <input type="hidden" name="kravingName" id="kravingField" value="<%= kraving.name%>">
-            <input type="hidden" name="placeName" id="placeNameField">
-            <input type="hidden" name="placeID" id="placeIDField">
-
-
-            <button id="hello" type="submit" class="btn btn-success">Save</button>
-          </form>
+              <button id="hello" type="submit" class="btn btn-success">Save</button>
+            </form>
         </div>
 
         <div id="map" class = "col-lg-6"></div>
       </div>
 
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer></script>
 
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-Y3EQPS2pywoCVD_9WsFZwWJb8uDx4BE&libraries=places&callback=initMap" async defer></script>
-
- </main>
+  <!-- </main> -->
 
   <div class="footer">
     <footer class="copyright">
