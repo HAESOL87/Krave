@@ -63,8 +63,8 @@ h3{
 
 footer {
     padding-top: 50px;
-     float: right;
-   /* align: center;*/
+    float: left;
+    align: center;
 }
 .bg {
   position: fixed;
