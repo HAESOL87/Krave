@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <% include ./partials/head %>
-  <% include ./partials/header %>
-    <a href="/kravings/" ><img id="logo2" src="http://i.imgur.com/Zz3Uc8N.png?1"></a>
+ <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/journal/bootstrap.min.css">
+<link rel='stylesheet' href='/stylesheets/custom.css' />
+
+
     <link rel='stylesheet' href='/stylesheets/round-about.css' />
     <script type="text/javascript" src="/js/jquery.js"></script>
     <style>
@@ -22,7 +24,28 @@
       }
 
     </style>
+
 </head>
+<nav>
+<div class="nav">
+    <ul class="navbar-nav navbar-right">
+
+
+        <li><a href="/kravings">KRAVs</a></li>
+        <li><a href="/favs">FAVs</a></li>
+        <li><a href="/about">About</a></li>
+      <% if (currentUser) { %>
+        <li><a href="#"><%= currentUser.local.email %></a></li>
+        <li><a href="/logout">Logout</a></li>
+      <% } else { %>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Signup</a></li>
+      <% } %>
+    </ul>
+  </div>
+
+</nav>
+    <a href="/kravings/" ><img id="logo2" src="http://i.imgur.com/Zz3Uc8N.png?1"></a>
 
 <body class="container-fluid2">
 
@@ -34,28 +57,28 @@
       <div id="row1" class="content">
 
             <div class="haesol" class = "col-lg-5">
-              <img class="avatar" src="http://i.imgur.com/o9xkYV9.jpg?2" alt="Haesol" />
+              <img class="avatar" src="http://i.imgur.com/o9xkYV9.jpg?3" alt="Haesol" />
               <p><br><a id = "linked" href="https://www.linkedin.com/in/haesollee" target="_blank">Hire Haesol</a></p>
               <br/>
               <br/>
             </div>
 
             <div class="kenan" class = "col-lg-6">
-              <img class="avatar" src="http://i.imgur.com/WSc6wKi.jpg?1" alt="Kenan" />
+              <img class="avatar" src="http://i.imgur.com/WSc6wKi.jpg?2" alt="Kenan" />
               <p></br><a id = "linked" href="https://www.linkedin.com/in/kenanfranklin" target="_blank" >Hire Kenan</a></p>
               <br/>
               <br/>
             </div>
 
             <div class="david" class = "col-lg-7">
-              <img class="avatar" src="http://i.imgur.com/Gaju2XW.jpg?1" alt="David" />
+              <img class="avatar" src="http://i.imgur.com/Gaju2XW.jpg?4" alt="David" />
               <p></br><a id = "linked" href="https://www.linkedin.com/in/daquigley4" target="_blank">Hire David</a></p>
               <br/>
               <br/>
             </div>
 
             <div class="chris" class = "col-lg-8">
-              <img class="avatar" src="http://i.imgur.com/tw2RaPz.jpg?2" alt="Chris" />
+              <img class="avatar" src="http://i.imgur.com/tw2RaPz.jpg?3" alt="Chris" />
               <p> </br> <a id = "linked" href="https://www.linkedin.com/in/christopher-hayes-6b76b9b2" target="_blank">Hire Chris</a></p>
               <br/>
               <br/>
