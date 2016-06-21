@@ -219,7 +219,7 @@ background-size: 100%;
   }
 
 .content {
-  display: inline-block;
+  padding-bottom: 20px;
 }
 
 /*div{
