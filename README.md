@@ -47,7 +47,7 @@ We didn't use a completely built out template to style our site so we had some d
 
 [Trello: User Stories](https://trello.com/b/6oJBfopN/project-3#)
 
-[GitHub: Krave. - repository](https://github.com/H4RU87/Krave)
+[GitHub: Krave. - repository](https://github.com/HAESOL87/Krave)
 
 [Heroku: Krave. - application](https://krave.herokuapp.com/)
 
