@@ -3,6 +3,8 @@
 ##Overview:
 A web application built with MongoDB, ExpressJS, and NodeJS that can help you satisfy your Kravings!
 
+[Live Demo](https://krave.herokuapp.com/)
+
 #### Features:
 ##### Create your personal list of kravings:
 - Krave comes with a list where you can keep track of what you're kraving, whether it be donuts, hamburgers, or a juicy steak!  You can always edit and remove kravings depending on what you're feeling at the moment.
